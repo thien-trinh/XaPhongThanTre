@@ -370,6 +370,7 @@
     <Content Include="config\applications.config" />
     <Content Include="config\404handlers.config" />
     <Content Include="Views\HomePage.cshtml" />
+    <Content Include="Views\MasterPage.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
