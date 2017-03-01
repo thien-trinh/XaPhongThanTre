@@ -3,6 +3,9 @@
 	Layout = null;
 }
 
+@{ 
+    var isHomepage = CurrentPage.DocumentTypeAlias == "homePage";
+}
 
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en-US" prefix="og: http://ogp.me/ns#" itemscope="itemscope" itemtype="http://schema.org/WebPage"> <![endif]-->
@@ -17,17 +20,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
     <link rel="stylesheet" href="/assets/css/main.css" />
-    <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
-    <!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+    <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+    <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
 </head>
 <body class="homepage">
     <div id="page-wrapper">
-        <!-- Header -->
-        <div id="header-wrapper">
-            <div class="homecoverimage"><img src="/images/HomeCover4.jpg"/></div>
+        <div id="header-wrapper" class="@(isHomepage?"":"headerBG")">
+            @if (isHomepage)
+            {
+                <div class="homecoverimage"><img src="/images/HomeCover4.jpg" /></div>
+                
+            }
+             
             <div id="header" class="container">
                 <!-- Logo -->
-                <h1 id="logo"><a href="index.html">Nature Clean Store</a>
+                <h1 id="logo">
+                    <a href="/">Nature Clean Store</a>
                 </h1>
                 <!-- Nav -->
                 <nav id="nav">
@@ -42,25 +50,31 @@
                         </li>
                         <li><a href="left-sidebar.html">Chia sẻ</a></li>
                         <li class="break"><a href="right-sidebar.html">Liên hệ</a></li>
-                        <li ><a href="right-sidebar.html">Mua hàng</a></li>
+                        <li><a href="right-sidebar.html">Mua hàng</a></li>
                     </ul>
                 </nav>
+                @if (isHomepage)
+                {
+             <!-- Hero -->
+                    <section id="hero" class="container">
+                        <header>
+                            <b>
+                                <h2>
+                                    Xà phòng than tre hoạt tính <Br /> Active Bamboo Charcoal Soap
+                                </h2>
+                            </b>
+                        </header>
+                        @*<p>
+                        <strong> 100% CHIẾT XUẤT THIÊN NHIÊN. <br/>Sản phẩm được xuất khẩu sang Nhật Bản từ năm 2009</strong>
+                    </p>
+                    <ul class="actions">
+                        <li><a href="#" class="button">Xem thêm</a></li>
+                    </ul>*@
+                    </section>
+                }
             </div>
-            <!-- Hero -->
-            <section id="hero" class="container">
-                <header>
-                    <b>
-                        <h2>Xà phòng than tre hoạt tính <Br/> Active Bamboo Charcoal Soap
-                        </h2></b>
-                </header>
-                @*<p>
-                    <strong> 100% CHIẾT XUẤT THIÊN NHIÊN. <br/>Sản phẩm được xuất khẩu sang Nhật Bản từ năm 2009</strong>
-                </p>
-                <ul class="actions">
-                    <li><a href="#" class="button">Xem thêm</a></li>
-                </ul>*@
-            </section>
-        </div>
+
+                    </div>
         @RenderBody()
         <div id="footer-wrapper">
             <div id="footer" class="container">
@@ -133,11 +147,12 @@
         </div>
     </div>
     <!-- Scripts -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/jquery.dropotron.min.js"></script>
-    <script src="assets/js/skel.min.js"></script>
-    <script src="assets/js/util.js"></script>
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/js/jquery.dropotron.min.js"></script>
+    <script src="/assets/js/skel.min.js"></script>
+    <script src="/assets/js/util.js"></script>
     <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-    <script src="assets/js/main.js"></script>
-</body>
+    <script src="/assets/js/main.js"></script>
+
+        </body>
 </html>

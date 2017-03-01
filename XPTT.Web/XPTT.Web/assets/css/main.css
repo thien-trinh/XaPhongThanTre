@@ -1978,7 +1978,7 @@
 		position: relative;
 		background: #fff;
 		overflow-x: hidden;
-		padding: 6em 0 6em 0;
+		padding: 3em 0 3em 0;
 	}
 
 	.image-wrapper {
@@ -2005,23 +2005,29 @@
 
 	#header-wrapper {
 		position: relative;
-	    width: 100%;
-	  
-		/*background-image: url("images/header.svg");
-		background-image: url("images/overlay.png"), url("images/header.svg"), -moz-linear-gradient(75deg, #FF7088 15%, #F2B69D 55%);
-		background-image: url("images/overlay.png"), url("images/header.svg"), -webkit-linear-gradient(75deg, #FF7088 15%, #F2B69D 55%);
-		background-image: url("images/overlay.png"), url("images/header.svg"), -ms-linear-gradient(75deg, #FF7088 15%, #F2B69D 55%);
-		background-image: url("images/overlay.png"), url("images/header.svg"), linear-gradient(75deg, #FF7088 15%, #F2B69D 55%);*/
+	    width: 100%;	  
+        min-height:112px;
+
+        
 		/*background-color: #f08c89;
-		background-size: 100% 620%;
+		
 		background-size: 128px 128px, 100% 620%, auto;
 		background-repeat: repeat, no-repeat, no-repeat;*/
 	}
+    .headerBG{
+        background-image: url("/images/HomeCover4.jpg");
+		background-image: url("/images/overlay.png"), url("/images/HomeCover4.jpg"), -moz-linear-gradient(75deg, #FF7088 15%, #F2B69D 55%);
+		background-image: url("/images/overlay.png"), url("/images/HomeCover4.jpg"), -webkit-linear-gradient(75deg, #FF7088 15%, #F2B69D 55%);
+		background-image: url("/images/overlay.png"), url("/images/HomeCover4.jpg"), -ms-linear-gradient(75deg, #FF7088 15%, #F2B69D 55%);
+		background-image: url("/images/overlay.png"), url("/images/HomeCover4.jpg"), linear-gradient(75deg, #FF7088 15%, #F2B69D 55%);
+        background-repeat:no-repeat;
+        min-height:112px;
+    }
 
 
 	#promo-wrapper {
 		position: relative;
-		background-image: url("images/overlay.png"), url("../../images/promo.jpg");
+		background-image: url("/images/overlay.png"), url("/images/promo.jpg");
 		background-size: 192px 192px, cover;
 		background-position: top left, center center;
 		color: #fff;
