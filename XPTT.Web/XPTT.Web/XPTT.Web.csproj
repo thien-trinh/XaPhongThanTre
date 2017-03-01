@@ -351,6 +351,9 @@
     <Content Include="assets\js\main.js" />
     <Content Include="assets\js\skel.min.js" />
     <Content Include="assets\js\util.js" />
+    <Content Include="images\HomeCover2.jpg" />
+    <Content Include="images\HomeCover3.jpg" />
+    <Content Include="images\HomeCover4.jpg" />
     <Content Include="images\pic01.jpg" />
     <Content Include="images\pic02.jpg" />
     <Content Include="images\pic03.jpg" />
