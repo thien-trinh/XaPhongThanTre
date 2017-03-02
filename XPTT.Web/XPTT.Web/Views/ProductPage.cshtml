@@ -3,7 +3,9 @@
 @{
     Layout = "MasterPage.cshtml";
 }
-
+@{
+    var featureImage = CurrentPage.FeartureImage!=null ? Umbraco.Media(CurrentPage.FeartureImage).umbracoFile :"";
+}
 
         <!-- Main -->
         <div class="wrapper">
@@ -12,42 +14,19 @@
                 <!-- Content -->
                 <article id="content">
                     <header>
-                        <h2>No Sidebar</h2>
+                        <h2>@CurrentPage.PageName</h2>
                         <p>
-                            Lorem ipsum dolor sit amet consectetur et sed adipiscing elit
-                            dolor neque semper.
+                           Giá bán lẻ: @String.Format("{0:n0}", CurrentPage.Cost) VND <a class="btn btn-danger btn-small"><i class="icon-folder-open"></i> Mua ngay</a>
                         </p>
                     </header>
-                    <a href="#" class="image featured"><img src="images/pic06.jpg" alt="" /></a>
-                    <p>
-                        Ut sed tortor luctus, gravida nibh eget, volutpat odio. Proin rhoncus, sapien
-                        mollis luctus hendrerit, orci dui viverra metus, et cursus nulla mi sed elit. Vestibulum
-                        condimentum, mauris a mattis vestibulum, urna mauris cursus lorem, eu fringilla lacus
-                        ante non est. Nullam vitae feugiat libero, eu consequat sem. Proin tincidunt neque
-                        eros. Duis faucibus blandit ligula, mollis commodo risus sodales at. Sed rutrum et
-                        turpis vel blandit. Nullam ornare congue massa, at commodo nunc venenatis varius.
-                        Praesent mollis nisi at vestibulum aliquet. Sed sagittis congue urna ac consectetur.
-                    </p>
-                    <p>
-                        Mauris eleifend eleifend felis aliquet ornare. Vestibulum porta velit at elementum
-                        gravida nibh eget, volutpat odio. Proin rhoncus, sapien
-                        mollis luctus hendrerit, orci dui viverra metus, et cursus nulla mi sed elit. Vestibulum
-                        condimentum, mauris a mattis vestibulum, urna mauris cursus lorem, eu fringilla lacus
-                        ante non est. Nullam vitae feugiat libero, eu consequat sem. Proin tincidunt neque
-                        eros. Duis faucibus blandit ligula, mollis commodo risus sodales at. Sed rutrum et
-                        turpis vel blandit. Nullam ornare congue massa, at commodo nunc venenatis varius.
-                        Praesent mollis nisi at vestibulum aliquet. Sed sagittis congue urna ac consectetur.
-                    </p>
-                    <p>
-                        Vestibulum pellentesque posuere lorem non aliquam. Mauris eleifend eleifend
-                        felis aliquet ornare. Vestibulum porta velit at elementum elementum.
-                    </p>
+                    <a href="#" class="image featured"><img src="@featureImage" alt="" /></a>
+                    @CurrentPage.MainContent
                 </article>
 
-                <div class="row features">
+                @*<div class="row features">
                     <section class="4u 12u(narrower) feature">
                         <div class="image-wrapper first">
-                            <a href="#" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
+                            <a href="#" class="image featured"><img src="/images/pic04.jpg" alt="" /></a>
                         </div>
                         <header>
                             <h3>Dolor sit consequat magna</h3>
@@ -62,7 +41,7 @@
                     </section>
                     <section class="4u 12u(narrower) feature">
                         <div class="image-wrapper">
-                            <a href="#" class="image featured"><img src="images/pic04.jpg" alt="" /></a>
+                            <a href="#" class="image featured"><img src="/images/pic04.jpg" alt="" /></a>
                         </div>
                         <header>
                             <h3>Dolor sit consequat magna</h3>
@@ -77,7 +56,7 @@
                     </section>
                     <section class="4u 12u(narrower) feature">
                         <div class="image-wrapper">
-                            <a href="#" class="image featured"><img src="images/pic05.jpg" alt="" /></a>
+                            <a href="#" class="image featured"><img src="/images/pic05.jpg" alt="" /></a>
                         </div>
                         <header>
                             <h3>Dolor sit consequat magna</h3>
@@ -90,7 +69,7 @@
                             <li><a href="#" class="button">Elevate my awareness</a></li>
                         </ul>
                     </section>
-                </div>
+                </div>*@
             </div>
         </div>
 

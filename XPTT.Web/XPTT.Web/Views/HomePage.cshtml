@@ -4,48 +4,8 @@
 	Layout = "MasterPage.cshtml";
 }
 <!-- Features 1 -->
-<div class="wrapper">
-    <div class="container">
-        <div class="row">
-            <section class="6u 12u(narrower) feature">
-                <div class="image-wrapper first">
-                    <a href="#" class="image featured first"><img src="images/pic01.jpg" alt="" /></a>
-                </div>
-                <header>
-                    <h2>
-                        Than tre hoạt tính, chất diệt khuẩn tự nhiên
-                    </h2>
-                </header>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur et sed adipiscing elit. Curabitur vel
-                    sem sit dolor neque semper magna. Lorem ipsum dolor sit amet consectetur et sed
-                    adipiscing elit. Curabitur vel sem sit.
-                </p>
-                <ul class="actions">
-                    <li><a href="#" class="button">Xem thêm</a></li>
-                </ul>
-            </section>
-            <section class="6u 12u(narrower) feature">
-                <div class="image-wrapper">
-                    <a href="#" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
-                </div>
-                <header>
-                    <h2>
-                        Dầu dừa nguyên chất - món quà từ thiên nhiên
-                    </h2>
-                </header>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur et sed adipiscing elit. Curabitur vel
-                    sem sit dolor neque semper magna. Lorem ipsum dolor sit amet consectetur et sed
-                    adipiscing elit. Curabitur vel sem sit.
-                </p>
-                <ul class="actions">
-                    <li><a href="#" class="button">Xem thêm</a></li>
-                </ul>
-            </section>
-        </div>
-    </div>
-</div>
+@Html.Partial("ListArticleAtHomePage")
+
 <!-- Promo -->
 <div id="promo-wrapper">
     <section id="promo">
@@ -55,45 +15,7 @@
 </div>
 <!-- Features 2 -->
 <div class="wrapper">
-    <section class="container">
-        <header class="major">
-            <h2>100% sản phẩm được chiết xuất từ thiên nhiên 100%</h2>
-            <p>Sự khác biệt cơ bản giữa mỹ phẩm thiên nhiên và mỹ phẩm thường nằm ở Chất lượng nguyên liệu. Mỹ phẩm thiên nhiên nuôi dưỡng và phục hồi tế bào da, tóc bằng tinh dầu, chiết xuất và các hoạt chất khác từ thiên nhiên …</p>
-        </header>
-        <div class="row features">
-            <section class="4u 12u(narrower) feature">
-                <div class="image-wrapper first">
-                    <a href="#" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
-                </div>
-                <p>
-                    <span class="greenText">
-                        Xà phòng than tre hoạt tính.</span>
-                        <br /><span class="costText">Giá: 25.000 VND</span>
-</p>
-            </section>
-            <section class="4u 12u(narrower) feature">
-                <div class="image-wrapper">
-                    <a href="#" class="image featured"><img src="images/pic04.jpg" alt="" /></a>
-                </div>
-                <p>
-                    <span class="greenText">Xà phòng than tre hoạt tính - tinh dầu quế. </span><br />
-                    <span class="costText">Giá: 35.000 VND</span>
-                </p>
-            </section>
-            <section class="4u 12u(narrower) feature">
-                <div class="image-wrapper">
-                    <a href="#" class="image featured"><img src="images/pic05.jpg" alt="" /></a>
-                </div>
-                <p>
-                    <span class="greenText">
-                        Xà phòng than tre hoạt tính - tinh dầu bạc hà.</span> <br />
-                    <span class="costText">Giá: 35.000 VND</span>
-</p>
-            </section>
-        </div>
-        <ul class="actions major">
-            <li><a href="#" class="button">Mua hàng</a></li>
-        </ul>
-    </section>
+    @Html.Partial("ListProductsAtHomePage")
+    
 </div>
 <!-- Footer -->

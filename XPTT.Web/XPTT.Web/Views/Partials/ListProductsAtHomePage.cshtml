@@ -1,0 +1,44 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+
+
+@{
+    var selection = CurrentPage.AncestorOrSelf(1).Descendants("productPage").Where("Visible");
+}
+@*
+    As an example of more querying, if you have a true/false property with the alias of shouldBeFeatured:
+    var selection= CurrentPage.Children("DocumentTypeAlias").Where("shouldBeFeatured == true").Where("Visible");
+*@
+
+
+@if (selection.Any())
+{
+<section class="container">
+    <header class="major">
+        <h2>100% sản phẩm được chiết xuất từ thiên nhiên 100%</h2>
+        <p>Sự khác biệt cơ bản giữa mỹ phẩm thiên nhiên và mỹ phẩm thường nằm ở Chất lượng nguyên liệu. Mỹ phẩm thiên nhiên nuôi dưỡng và phục hồi tế bào da, tóc bằng tinh dầu, chiết xuất và các hoạt chất khác từ thiên nhiên …</p>
+    </header>
+
+    <div class="row features">
+        @foreach (var item in selection)
+        {
+            var featureImage = item.FeartureImage != null ? Umbraco.Media(item.FeartureImage).umbracoFile : "";
+        <section class="4u 12u(narrower) feature">
+            <div class="image-wrapper first">
+                <a href="@item.Url" class="image featured"><img src="@featureImage" alt="" /></a>
+            </div>
+            <p>
+                <span class="greenText">
+                    @item.PageName
+                </span>
+                <br /><span class="costText">Giá: @String.Format("{0:n0}", item.Cost) VND</span>
+            </p>
+        </section>
+        }
+    </div>
+    <ul class="actions major">
+        <li><a href="#" class="button">Mua hàng</a></li>
+    </ul>
+</section>
+
+}
+
