@@ -24,7 +24,7 @@
                     var featureImage = item.FeatureImage != null ? Umbraco.Media(item.FeatureImage).umbracoFile : "";
                     <section class="6u 12u(narrower) feature">
                         <div class="image-wrapper first">
-                            <a href="#" class="image featured first"><img src="@featureImage" alt="" /></a>
+                            <a href="@item.Url" class="image featured first"><img src="@featureImage" alt="" /></a>
                         </div>
                         <header>
                             <h2>

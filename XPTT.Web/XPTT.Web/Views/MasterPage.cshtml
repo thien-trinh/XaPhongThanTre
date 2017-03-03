@@ -21,83 +21,124 @@
     <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
     <link rel="stylesheet" href="/assets/css/main.css" />
     <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
-    <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+    <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css"/><![endif]-->
+    <meta  content="Chuyên cung cấp các sản phẩm xà phòng tắm, xà bông tắm có nguồn gốc than tre hoạt tính, nguyên liệu thiên nhiên" name="description" />
+    <meta content="Xà phòng than hoạt tính, xà phòng than tre tinh dầu quế, xà phòng than tre tinh dầu quế, xà phòng cám gạo" name="keywords" />
+    <meta name="robots" content="index,follow" />
+    <meta name="Googlebot" content="index,follow,noarchive" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="author" content="xaphongthantre.vn" />
+    <meta http-equiv="content-language" content="vi"/>
+    <link href="/Images/bamboo-icon-75293.png" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+    <script>
+        (function(i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function() {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-92626638-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+    <!-- Google Tag Manager -->
+    <script>
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WD8SBZW');</script>
+    <!-- End Google Tag Manager -->
 </head>
 <body class="homepage">
-    <div id="page-wrapper">
-        <div id="header-wrapper" class="@(isHomepage?"":"headerBG")">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WD8SBZW"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+<div id="page-wrapper">
+    <div id="header-wrapper" class="@(isHomepage ? "" : "headerBG")">
+        @if (isHomepage)
+        {
+            <div class="homecoverimage"><img src="/images/HomeCover4.jpg"/>
+            </div>
+
+        }
+
+        <div id="header" class="container">
+            <!-- Logo -->
+            <h1 id="logo">
+                <a href="/">Nature Clean Store</a>
+            </h1>
+            <!-- Nav -->
+            <nav id="nav">
+                <ul>
+                    <li>
+                        <a href="#">Sản phẩm</a>
+                        <ul>
+                            <li><a href="#">Xà phòng than tre hoạt tính</a></li>
+                            <li><a href="#">Xà phòng than tre hoạt tính tinh dầu quế</a></li>
+                            <li><a href="#">Xà phòng than tre hoạt tính tinh dầu bạc hà</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="left-sidebar.html">Chia sẻ</a></li>
+                    <li class="break"><a href="right-sidebar.html">Liên hệ</a></li>
+                    <li><a href="right-sidebar.html">Mua hàng</a></li>
+                </ul>
+            </nav>
             @if (isHomepage)
             {
-                <div class="homecoverimage"><img src="/images/HomeCover4.jpg" /></div>
-                
-            }
-             
-            <div id="header" class="container">
-                <!-- Logo -->
-                <h1 id="logo">
-                    <a href="/">Nature Clean Store</a>
-                </h1>
-                <!-- Nav -->
-                <nav id="nav">
-                    <ul>
-                        <li>
-                            <a href="#">Sản phẩm</a>
-                            <ul>
-                                <li><a href="#">Xà phòng than tre hoạt tính</a></li>
-                                <li><a href="#">Xà phòng than tre hoạt tính tinh dầu quế</a></li>
-                                <li><a href="#">Xà phòng than tre hoạt tính tinh dầu bạc hà</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="left-sidebar.html">Chia sẻ</a></li>
-                        <li class="break"><a href="right-sidebar.html">Liên hệ</a></li>
-                        <li><a href="right-sidebar.html">Mua hàng</a></li>
-                    </ul>
-                </nav>
-                @if (isHomepage)
-                {
-             <!-- Hero -->
-                    <section id="hero" class="container">
-                        <header>
-                            <b>
-                                <h2>
-                                    Xà phòng than tre hoạt tính <Br /> Active Bamboo Charcoal Soap
-                                </h2>
-                            </b>
-                        </header>
-                        @*<p>
+                <!-- Hero -->
+                <section id="hero" class="container">
+                    <header>
+                        <b>
+                            <h2>
+                                Xà phòng than tre hoạt tính <Br/> Active Bamboo Charcoal Soap
+                            </h2>
+                        </b>
+                    </header>
+                    @*<p>
                         <strong> 100% CHIẾT XUẤT THIÊN NHIÊN. <br/>Sản phẩm được xuất khẩu sang Nhật Bản từ năm 2009</strong>
                     </p>
                     <ul class="actions">
                         <li><a href="#" class="button">Xem thêm</a></li>
                     </ul>*@
-                    </section>
-                }
-            </div>
+                </section>
+            }
+        </div>
 
-                    </div>
-        @RenderBody()
-        <div id="footer-wrapper">
-            <div id="footer" class="container">
-                <header class="major">
-                    <h2>Liên hệ với chúng tôi</h2>
+    </div>
+    @RenderBody()
+    <div id="footer-wrapper">
+        <div id="footer" class="container">
+            <header class="major">
+                <h2>Liên hệ với chúng tôi</h2>
+                <p>
+                    Hot line: 094 7337 087 (imess, facetime, zalo, viber)
+                </p>
+            </header>
+            <div class="row">
+                <section class="6u 12u(narrower)">
                     <p>
-                        Hot line: 094 7337 087 (imess, facetime, zalo, viber)
+                        Cơ sở 1: Tầng 16, tòa nhà Cland, 156 Xã Đàn 2, quận Đống Đa, Hà Nội<br/>
+                        Tel: 094 7337 087. Từ 9-18h.
                     </p>
-                </header>
-                <div class="row">
-                    <section class="6u 12u(narrower)">
-                        <p>
-                            Cơ sở 1: Tầng 16, tòa nhà Cland, 156 Xã Đàn 2, quận Đống Đa, Hà Nội<br />
-                            Tel: 094 7337 087. Từ 9-18h.
-                        </p>
-                        <p>
-                            Cơ sở 2: Tầng 6, tòa nhà BIDV, 3 Hàng Vôi, quận Hoàn Kiếm, Hà nội <br />
-                            Tel: 09 345 090 23. Từ 9-18h.
-                        </p>
-                        <p>
-                            Cơ sở 3: 19 ngõ 298/26/25 Ngọc Lâm, quận Long Biên, Hà nội <br />
-                            Tel: 09 345 090 23. Từ 19-22h.
-                        </p>                @*<form method="post" action="#">
+                    <p>
+                        Cơ sở 2: Tầng 6, tòa nhà BIDV, 3 Hàng Vôi, quận Hoàn Kiếm, Hà nội <br/>
+                        Tel: 09 345 090 23. Từ 9-18h.
+                    </p>
+                    <p>
+                        Cơ sở 3: 19 ngõ 298/26/25 Ngọc Lâm, quận Long Biên, Hà nội <br/>
+                        Tel: 09 345 090 23. Từ 19-22h.
+                    </p> @*<form method="post" action="#">
                             <div class="row 50%">
                                 <div class="6u 12u(mobile)">
                                     <input name="name" placeholder="Name" type="text" />
@@ -120,49 +161,51 @@
                                 </div>
                             </div>
                         </form>*@
-                    </section>
-                    <section class="6u 12u(narrower)">
-                        <div class="row 0%">
-                            <ul class="divided icons 6u 12u(mobile)" style="width: 55%">
-                                <li class="icon fa-instagram"><a href="#"><span class="extra">instagram.com/</span>untitled</a></li>
-                                <li class="icon fa-facebook"><a href="https://www.facebook.com/XaPhongThanTre/" target="_blank"><span class="extra">facebook.com/</span>XaPhongThanTre</a></li>
-                                <li class="icon fa-envelope"><a href="mailto:kinhdoanh@xaphongthantre.vn"  target="_blank"><span class="extra">kinhdoanh</span>@@xaphongthantre.vn</a></li>
-                                @*<li class="icon fa-dribbble"><a href="#"><span class="extra">dribbble.com/</span>untitled</a></li>*@
-                            </ul>
-                            <ul class="divided icons 6u 12u(mobile)">
-                                @*<li class="icon fa-instagram"><a href="#"><span class="extra">instagram.com/</span>untitled</a></li>*@
-                                @*<li class="icon fa-twitter"><a href="#"><span class="extra">twitter.com/</span>untitled</a></li>*@
-                                @*<li class="icon fa-pinterest"><a href="#"><span class="extra">pinterest.com/</span>untitled</a></li>*@
-                            </ul>
-                        </div>
-                    </section>
-                </div>
-            </div>
-            <div id="copyright" class="container">
-                <ul class="menu">
-                    <li>&copy; Copyright by XaPhongThanTre.vn. All rights reserved.</li>
-                    <li>Design by Nature Clean Body Store</li>
-                </ul>
+                </section>
+                <section class="6u 12u(narrower)">
+                    <div class="row 0%">
+                        <ul class="divided icons 6u 12u(mobile)" style="width: 55%">
+                            <li class="icon fa-instagram"><a href="#"><span class="extra">instagram.com/</span>untitled</a></li>
+                            <li class="icon fa-facebook"><a href="https://www.facebook.com/XaPhongThanTre/" target="_blank"><span class="extra">facebook.com/</span>XaPhongThanTre</a></li>
+                            <li class="icon fa-envelope"><a href="mailto:kinhdoanh@xaphongthantre.vn" target="_blank"><span class="extra">kinhdoanh</span>@@xaphongthantre.vn</a></li>
+                            @*<li class="icon fa-dribbble"><a href="#"><span class="extra">dribbble.com/</span>untitled</a></li>*@
+                        </ul>
+                        <ul class="divided icons 6u 12u(mobile)">
+                            @*<li class="icon fa-instagram"><a href="#"><span class="extra">instagram.com/</span>untitled</a></li>*@
+                            @*<li class="icon fa-twitter"><a href="#"><span class="extra">twitter.com/</span>untitled</a></li>*@
+                            @*<li class="icon fa-pinterest"><a href="#"><span class="extra">pinterest.com/</span>untitled</a></li>*@
+                        </ul>
+                    </div>
+                </section>
             </div>
         </div>
+        <div id="copyright" class="container">
+            <ul class="menu">
+                <li>&copy; Copyright by XaPhongThanTre.vn. All rights reserved.</li>
+                <li>Design by Nature Clean Body Store</li>
+            </ul>
+        </div>
     </div>
-    <!-- Scripts -->
-    <script src="/assets/js/jquery.min.js"></script>
-    <script src="/assets/js/jquery.dropotron.min.js"></script>
-    <script src="/assets/js/skel.min.js"></script>
-    <script src="/assets/js/util.js"></script>
-    <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-    <script src="/assets/js/main.js"></script>
-    <div id="fb-root"></div>
-    <script>
-(function(d, s, id) {
-var js, fjs = d.getElementsByTagName(s)[0];
-if (d.getElementById(id)) return;
-js = d.createElement(s); js.id = id;
-js.src = "//connect.facebook.net/vi_VN/sdk.js#x...";
-fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+</div>
+<!-- Scripts -->
+<script src="/assets/js/jquery.min.js"></script>
+<script src="/assets/js/jquery.dropotron.min.js"></script>
+<script src="/assets/js/skel.min.js"></script>
+<script src="/assets/js/util.js"></script>
+<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="/assets/js/main.js"></script>
+<div id="fb-root"></div>
+<script>
+    (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "//connect.facebook.net/vi_VN/sdk.js#x...";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script>
 
-    <div style="position:fixed; z-index:9999999; right:10px; bottom:10px;" class="fb-page" data-tabs="messages" data-href="https://www.facebook.com/XaPhongThanTre/" data-width="250" data-height="300" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="false"></div>
-        </body>
+<div style="position: fixed; z-index: 9999999; right: 10px; bottom: 10px;" class="fb-page" data-tabs="messages" data-href="https://www.facebook.com/XaPhongThanTre/" data-width="250" data-height="300" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="false"></div>
+</body>
 </html>
