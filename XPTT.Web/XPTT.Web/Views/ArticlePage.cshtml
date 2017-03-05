@@ -6,6 +6,7 @@
 @{
     var featureImage = CurrentPage.FeatureImage != null ? Umbraco.Media(CurrentPage.FeatureImage).umbracoFile : "";
 }
+@{   var selection = CurrentPage.AncestorOrSelf(1).Descendants("articlePage").Where("ShowOnHomePage == true").Where("Visible"); }
 <!-- Main -->
 <div class="wrapper">
     <div class="container" id="main">
@@ -13,34 +14,26 @@
             <div class="4u 12u(narrower)">
 
                 <!-- Sidebar -->
-                <section id="sidebar">
-                    <section>
-                        <header>
-                            <h3>Elit sed feugiat</h3>
-                        </header>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur et sed adipiscing elit. Curabitur et vel
-                            sem sit amet dolor neque semper magna. Lorem ipsum dolor sit amet consectetur et dolore
-                            adipiscing elit. Curabitur vel sem sit.
-                        </p>
-                        <ul class="actions">
-                            <li><a href="#" class="button">Magna amet nullam</a></li>
-                        </ul>
-                    </section>
-                    <section>
-                        <a href="#" class="image featured"><img src="images/pic07.jpg" alt="" /></a>
-                        <header>
-                            <h3>Commodo lorem varius</h3>
-                        </header>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur et sed adipiscing elit. Curabitur et vel
-                            sem sit amet dolor neque semper magna. Lorem ipsum dolor sit amet consectetur et dolore
-                            adipiscing elit. Curabitur vel sem sit.
-                        </p>
-                        <ul class="actions">
-                            <li><a href="#" class="button">Ipsum sed dolor</a></li>
-                        </ul>
-                    </section>
+                <section id="sidebar">     
+                    @foreach (var item in selection)
+                    {
+                        var featureImageArticle = item.FeatureImage != null ? Umbraco.Media(item.FeatureImage).umbracoFile : "";
+                        <section>
+                            <header>
+                                <h3><a href="@item.Url">@item.PageName</a></h3>
+                            </header>
+                            <a href="@item.Url" class="image featured"><img src="@featureImageArticle" alt="" /></a>
+                            
+                            <p>
+                              @item.PageDescription
+                            </p>
+                            <ul class="actions">
+                                <li><a href="@item.Url" class="button">Xem thêm</a></li>
+                            </ul>
+                        </section>
+                    }
+
+                    
                 </section>
 
             </div>
@@ -60,52 +53,13 @@
 
             </div>
         </div>
-        <div class="row features">
-            <section class="4u 12u(narrower) feature">
-                <div class="image-wrapper first">
-                    <a href="#" class="image featured"><img src="@featureImage" alt="" /></a>
-                </div>
-                <header>
-                    <h3>Dolor sit consequat magna</h3>
-                </header>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur et sed adipiscing elit. Curabitur
-                    vel sem sit dolor neque semper magna lorem ipsum.
-                </p>
-                <ul class="actions">
-                    <li><a href="#" class="button">Elevate my awareness</a></li>
-                </ul>
-            </section>
-            <section class="4u 12u(narrower) feature">
-                <div class="image-wrapper">
-                    <a href="#" class="image featured"><img src="images/pic04.jpg" alt="" /></a>
-                </div>
-                <header>
-                    <h3>Dolor sit consequat magna</h3>
-                </header>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur et sed adipiscing elit. Curabitur
-                    vel sem sit dolor neque semper magna lorem ipsum.
-                </p>
-                <ul class="actions">
-                    <li><a href="#" class="button">Elevate my awareness</a></li>
-                </ul>
-            </section>
-            <section class="4u 12u(narrower) feature">
-                <div class="image-wrapper">
-                    <a href="#" class="image featured"><img src="images/pic05.jpg" alt="" /></a>
-                </div>
-                <header>
-                    <h3>Dolor sit consequat magna</h3>
-                </header>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur et sed adipiscing elit. Curabitur
-                    vel sem sit dolor neque semper magna lorem ipsum.
-                </p>
-                <ul class="actions">
-                    <li><a href="#" class="button">Elevate my awareness</a></li>
-                </ul>
-            </section>
-        </div>
+        
     </div>
+    <section class="container">
+        <header class="major">
+            <h2>100% sản phẩm được chiết xuất từ thiên nhiên 100%</h2>
+            <p>Sự khác biệt cơ bản giữa mỹ phẩm thiên nhiên và mỹ phẩm thường nằm ở Chất lượng nguyên liệu. Mỹ phẩm thiên nhiên nuôi dưỡng và phục hồi tế bào da, tóc bằng tinh dầu, chiết xuất và các hoạt chất khác từ thiên nhiên …</p>
+        </header>
+        @Html.Partial("ListProductsAtHomePage")
+        </section>
 </div>
