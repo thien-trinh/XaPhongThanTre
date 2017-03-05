@@ -1,5 +1,36 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.ArticleListing>
 @using ContentModels = Umbraco.Web.PublishedContentModels;
 @{
-	Layout = null;
+	Layout = "MasterPage.cshtml";
 }
+@{   
+    var selection = CurrentPage.AncestorOrSelf(1).Descendants("articlePage").Where("Visible").OrderBy("CreateDate desc"); 
+    
+ }
+
+<!-- Main -->
+<div class="wrapper">
+    <div class="container" id="main">
+
+        <!-- Content -->
+@foreach (var item in selection)
+{
+    var featureImage = item.FeatureImage != null ? Umbraco.Media(item.FeatureImage).umbracoFile : null ;
+    <article id="content">
+        <header>
+            <h2><a href="@item.Url">@item.PageName</a></h2>
+        </header>
+        @if (featureImage.GetType() != typeof(Umbraco.Core.Dynamics.DynamicNull))
+        {
+            <a href="@item.Url" class="image featured"><img src="@featureImage" alt="" /></a>
+        }        
+        <p>
+            @item.PageDescription
+        </p>
+    </article>
+}
+        
+
+       
+    </div>
+</div>

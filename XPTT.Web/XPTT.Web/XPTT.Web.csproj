@@ -2996,6 +2996,7 @@
     <Content Include="Views\ArticlePage.cshtml" />
     <Content Include="Views\ProductPage.cshtml" />
     <Content Include="Views\Partials\ListProductsAtHomePage.cshtml" />
+    <Content Include="Views\Partials\ListArticleAtHomePage.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
