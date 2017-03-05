@@ -2643,7 +2643,7 @@
 
 		/* Wrappers */
 
-			.wrapper {
+			.wrapper,.wrapper + .wrapper {
 				padding: 3em 20px 3em 20px;
 			}
 
