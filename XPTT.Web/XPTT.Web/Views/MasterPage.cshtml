@@ -87,7 +87,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             <nav id="nav">
                 <ul>
                     <li>
-                        <a href="#">Sản phẩm</a>
+                        <a href="#list_products">Sản phẩm</a>
                         @if (listProducts.Any())
                         { 
                             <ul>
@@ -101,7 +101,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                     </li>
                     <li><a href="/trang-chu/chia-se/">Chia sẻ</a></li>
                     <li class="break"><a href="#contact-us">Liên hệ</a></li>
-                    <li><a href="#">Mua hàng</a></li>
+                    <li><a href="#open_facebook_box">Mua hàng</a></li>
                 </ul>
             </nav>
             @if (isHomepage)
@@ -127,6 +127,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     </div>
     @RenderBody()
+    <div class="wrapper">
+        <section class="container">
+            <header class="major" id="list_products">
+                <h2>100% sản phẩm được chiết xuất từ thiên nhiên 100%</h2>
+                <p>Sự khác biệt cơ bản giữa mỹ phẩm thiên nhiên và mỹ phẩm thường nằm ở Chất lượng nguyên liệu. Mỹ phẩm thiên nhiên nuôi dưỡng và phục hồi tế bào da, tóc bằng tinh dầu, chiết xuất và các hoạt chất khác từ thiên nhiên …</p>
+            </header>
+            @Html.Partial("ListProductsAtHomePage")
+        </section>
+    </div>
     <div id="footer-wrapper">
         <div id="footer" class="container">
             <header class="major" id="contact-us">
@@ -227,68 +236,8 @@ s0.parentNode.insertBefore(s1,s0);
   js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.5";
   fjs.parentNode.insertBefore(js, fjs);
   }(document, 'script', 'facebook-jssdk'));</script>
-    <style>
-        #cfacebook {
-            position: fixed;
-            bottom: 0px;
-            right: 10px;
-            z-index: 999999999999999;
-            width: 250px;
-            height: auto;            
-            border-top-left-radius: 5px;
-            border-top-right-radius: 5px;
-            overflow: hidden;
-        }
-
-            #cfacebook .fchat {
-                float: left;
-                width: 100%;
-                height: 270px;
-                overflow: hidden;
-                display: none;
-                background-color: #fff;
-            }
-
-                #cfacebook .fchat .fb-page {
-                    margin-top: -130px;
-                    float: left;
-                }
-
-            #cfacebook a.chat_fb {
-                float: left;
-                padding: 0 25px;
-                width: 250px;
-                color: #fff;
-                text-decoration: none;
-                height: 40px;
-                line-height: 40px;
-                text-shadow: 0 1px 0 rgba(0,0,0,0.1);
-                background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAqCAMAAABFoMFOAAAAWlBMV…8/UxBxQDQuFwlpqgBZBq6+P+unVY1GnDgwqbD2zGz5e1lBdwvGGPE6OgAAAABJRU5ErkJggg==);
-                background-repeat: repeat-x;
-                background-size: auto;
-                background-position: 0 0;
-                background-color: #3a5795;
-                border: 0;
-                border-bottom: 1px solid #133783;
-                z-index: 9999999;
-                margin-right: 12px;
-                font-size: 18px;
-            }
-
-                #cfacebook a.chat_fb:hover {
-                    color: yellow;
-                    text-decoration: none;
-                }
-    </style>
-    <script>
-  jQuery(document).ready(function () {
-  jQuery(".chat_fb").click(function() {
-jQuery('.fchat').toggle('slow');
-  });
-  });
-    </script>
     <div id="cfacebook">
-        <a href="javascript:;" class="chat_fb" onclick="return:false;"><i class="fa fa-facebook-square"></i>Liên hệ - Mua Hàng</a>
+        <a href="javascript:;" class="chat_fb" onclick="return:false"><i class="fa fa-facebook-square"></i> Hỗ trợ - Đặt Hàng</a>
         <div class="fchat">
             <div class="fb-page" data-tabs="messages" data-href="https://www.facebook.com/XaPhongThanTre" data-width="250" data-height="400" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="false"></div>
         </div>

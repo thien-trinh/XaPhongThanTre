@@ -16,7 +16,7 @@
                     <header>
                         <h2>@CurrentPage.PageName</h2>
                         <p>
-                           Giá bán lẻ: @String.Format("{0:n0}", CurrentPage.Cost) VND <a class="btn btn-danger btn-small"><i class="icon-folder-open"></i> Mua ngay</a>
+                           Giá bán lẻ: @String.Format("{0:n0}", CurrentPage.Cost) VND <a class="btn btn-danger btn-small" href="#open_facebook_box"><i class="icon-folder-open"></i> Mua ngay</a>
                         </p>
                     </header>
                     <a href="#" class="image featured"><img src="@featureImage" alt="" /></a>
@@ -72,13 +72,7 @@
                 </div>*@
             </div>
 
-            <section class="container">
-                <header class="major">
-                    <h2>100% sản phẩm được chiết xuất từ thiên nhiên 100%</h2>
-                    <p>Sự khác biệt cơ bản giữa mỹ phẩm thiên nhiên và mỹ phẩm thường nằm ở Chất lượng nguyên liệu. Mỹ phẩm thiên nhiên nuôi dưỡng và phục hồi tế bào da, tóc bằng tinh dầu, chiết xuất và các hoạt chất khác từ thiên nhiên …</p>
-                </header>
-                @Html.Partial("ListProductsAtHomePage")
-            </section>
+            
         </div>
 
         
