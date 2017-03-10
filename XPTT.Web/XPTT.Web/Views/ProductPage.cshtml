@@ -19,7 +19,10 @@
                            Giá bán lẻ: @String.Format("{0:n0}", CurrentPage.Cost) VND <a class="btn btn-danger btn-small" href="#open_facebook_box"><i class="icon-folder-open"></i> Mua ngay</a>
                         </p>
                     </header>
-                    <a href="#" class="image featured"><img src="@featureImage" alt="" /></a>
+                    <a href="#" class="image featured"><img src="@featureImage" alt=""/></a>
+                    <p>
+                        @CurrentPage.PageDescription
+                    </p>
                     @CurrentPage.MainContent
                 </article>
 
@@ -75,4 +78,13 @@
             
         </div>
 
-        
+        <script type="text/javascript">
+            fbq('track', 'ViewContent', 
+                {
+                    content_ids: ['@CurrentPage.PageName'],
+                    content_type: 'product',
+                    value: @CurrentPage.Cost,
+                    currency: 'VNĐ'
+                }
+            );
+        </script>

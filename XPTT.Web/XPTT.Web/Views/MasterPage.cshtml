@@ -8,7 +8,8 @@
     string metaTitle = !String.IsNullOrEmpty(CurrentPage.MetaTitle) ? CurrentPage.MetaTitle : CurrentPage.PageName;
     string metaDescription = !String.IsNullOrEmpty(CurrentPage.MetaDescription) ? CurrentPage.MetaDescription : !String.IsNullOrEmpty(CurrentPage.PageDescription)? CurrentPage.PageDescription: "";
     string metaKeyword = !String.IsNullOrEmpty(CurrentPage.MetaKeyword) ? CurrentPage.MetaKeyword : "";
-
+    var mediaFile = !String.IsNullOrEmpty(CurrentPage.FeatureImage) ?  CurrentPage.FeatureImage : !String.IsNullOrEmpty(CurrentPage.FeartureImage) ? CurrentPage.FeartureImage : null;
+    var featureImageArticle = mediaFile != null && Umbraco.Media(mediaFile).umbracoFile.GetType() != typeof(Umbraco.Core.Dynamics.DynamicNull) ? HttpContext.Current.Request.Url.Host + Umbraco.Media(mediaFile).umbracoFile : "";
     var listProducts =  CurrentPage.AncestorOrSelf(1).Descendants("productPage").Where("Visible");
 }
 
@@ -35,6 +36,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="author" content="xaphongthantre.vn" />
     <meta http-equiv="content-language" content="vi"/>
+    <meta property="og:url" content="@CurrentPage.UrlAbsolute()" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="@metaTitle" />
+    <meta property="og:description" content="@metaDescription" />
+    <meta property="og:image" content="@featureImageArticle" />
     <link href="/Images/bamboo-icon-75293.png" rel="shortcut icon" type="image/vnd.microsoft.icon" />
     <script>
         (function(i, s, o, g, r, a, m) {
@@ -61,6 +67,23 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-WD8SBZW');</script>
     <!-- End Google Tag Manager -->
+    <!-- Facebook Pixel Code -->
+    <script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1332725430083744'); // Insert your pixel ID here.
+fbq('track', 'PageView');
+    </script>
+    <noscript>
+        <img height="1" width="1" style="display:none"
+             src="https://www.facebook.com/tr?id=1332725430083744&ev=PageView&noscript=1" />
+    </noscript>
+    <!-- DO NOT MODIFY -->
+    <!-- End Facebook Pixel Code -->
+
 </head>
 <body class="homepage">
     <!-- Google Tag Manager (noscript) -->
