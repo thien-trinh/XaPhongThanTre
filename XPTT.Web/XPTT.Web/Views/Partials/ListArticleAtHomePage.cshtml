@@ -7,7 +7,7 @@
     (You can find the alias of your Document Type by editing it in the Settings section)
 *@
 
-@{   var selection = CurrentPage.AncestorOrSelf(1).Descendants("articlePage").Where("ShowOnHomePage == true").Where("Visible"); }
+@{   var selection = CurrentPage.AncestorOrSelf(1).Descendants("articlePage").Where("ShowOnHomePage == true").Where("Visible").OrderBy("CreateDate desc").Take(4); }
 @*
     As an example of more querying, if you have a true/false property with the alias of shouldBeFeatured:
     var selection= CurrentPage.Children("DocumentTypeAlias").Where("shouldBeFeatured == true").Where("Visible");
