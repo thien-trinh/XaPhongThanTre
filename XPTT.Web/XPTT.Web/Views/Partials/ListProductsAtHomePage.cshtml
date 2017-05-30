@@ -16,7 +16,7 @@
         @foreach (var item in selection)
         {
             var featureImage = item.FeartureImage != null ? Umbraco.Media(item.FeartureImage).umbracoFile : "";
-        <section class="4u 12u(narrower) feature">
+        <section class="6u 12u(narrower) feature">
             <div class="image-wrapper first">
                 <a href="@item.Url" class="image featured"><img src="@featureImage" alt="" /></a>
             </div>

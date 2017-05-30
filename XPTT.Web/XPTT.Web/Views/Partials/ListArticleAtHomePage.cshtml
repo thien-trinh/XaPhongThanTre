@@ -7,7 +7,7 @@
     (You can find the alias of your Document Type by editing it in the Settings section)
 *@
 
-@{   var selection = CurrentPage.AncestorOrSelf(1).Descendants("articlePage").Where("ShowOnHomePage == true").Where("Visible").OrderBy("CreateDate desc").Take(4); }
+@{   var selection = CurrentPage.AncestorOrSelf(1).Descendants("articlePage").Where("ShowOnHomePage == true").Where("Visible").OrderBy("CreateDate desc").Take(3); }
 @*
     As an example of more querying, if you have a true/false property with the alias of shouldBeFeatured:
     var selection= CurrentPage.Children("DocumentTypeAlias").Where("shouldBeFeatured == true").Where("Visible");
@@ -22,7 +22,7 @@
                 @foreach (var item in selection)
                 {
                     var featureImage = item.FeatureImage != null ? Umbraco.Media(item.FeatureImage).umbracoFile : "";
-                    <section class="6u 12u(narrower) feature">
+                    <section class="4u 12u(narrower) feature">
                         <div class="image-wrapper first">
                             <a href="@item.Url" class="image featured first"><img src="@featureImage" alt="" /></a>
                         </div>
