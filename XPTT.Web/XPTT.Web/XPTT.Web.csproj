@@ -2997,6 +2997,7 @@
     <Content Include="Views\ProductPage.cshtml" />
     <Content Include="Views\Partials\ListProductsAtHomePage.cshtml" />
     <Content Include="Views\Partials\ListArticleAtHomePage.cshtml" />
+    <Content Include="App_Plugins\Sections\_SubcribeUser.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
