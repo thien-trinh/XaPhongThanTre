@@ -114,4 +114,22 @@ $(document).ready(function () {
     $(".chat_fb").click(function () {
         $('.fchat').toggle('slow');
     });
+    setTimeout(function () {
+        openModalPopup();
+    }, 1000);
+    // popup close function
+    $('.modal-content .close').click(function (event) {
+        $('.modal').fadeOut(800);
+    });
+    // popup 'esc' key to close
+    $(document).on('keydown', function (e) {
+        if (e.keyCode === 27) { // ESC
+            $('.modal').hide();
+        }
+    });
 });
+
+function openModalPopup() {
+    $('.modal').fadeIn(800);
+}
+
