@@ -3498,3 +3498,7 @@ input[type="button"].btn-block {
 #mc_embed_signup div.mce_inline_error {
     margin: 0 !important;padding: 0 !important;background-color: transparent !important;font-weight: normal !important;font-size: 12px;color: #b80d24 !important;
 }
+
+#mc_embed_signup div.mce_inline_error #mce-success-response {
+    display: none !important;
+}

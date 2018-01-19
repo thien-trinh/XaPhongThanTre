@@ -121,6 +121,12 @@ $(document).ready(function () {
     $('.modal-content .close').click(function (event) {
         $('.modal').fadeOut(800);
     });
+    $('.modal-content #mc-embedded-subscribe').click(function (event) {
+        setTimeout(function () {
+            $('.modal').fadeOut(800);
+        }, 1000);
+        
+    });
     // popup 'esc' key to close
     $(document).on('keydown', function (e) {
         if (e.keyCode === 27) { // ESC
