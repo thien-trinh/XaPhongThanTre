@@ -332,9 +332,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="a1ee4fc13606.html" />
     <Content Include="assets\css\font-awesome.min.css" />
     <Content Include="assets\css\ie8.css" />
     <Content Include="assets\css\ie9.css" />
+    <Content Include="assets\css\images\2018SaleOffBg.png" />
     <Content Include="assets\css\images\footer.svg" />
     <Content Include="assets\css\images\header.svg" />
     <Content Include="assets\css\images\image-wrapper.svg" />
