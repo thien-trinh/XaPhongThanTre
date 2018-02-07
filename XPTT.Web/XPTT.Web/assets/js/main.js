@@ -136,6 +136,7 @@ $(document).ready(function () {
 });
 
 function openModalPopup() {
-    $('.modal').fadeIn(800);
+    if (!Cookies.get("MCPopupClosed"))
+        $('.modal').fadeIn(800);
 }
 

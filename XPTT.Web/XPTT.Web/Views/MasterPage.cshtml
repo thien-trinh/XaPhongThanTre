@@ -8,7 +8,7 @@
     string metaTitle = !String.IsNullOrEmpty(CurrentPage.MetaTitle) ? CurrentPage.MetaTitle : CurrentPage.PageName;
     string metaDescription = !String.IsNullOrEmpty(CurrentPage.MetaDescription) ? CurrentPage.MetaDescription : !String.IsNullOrEmpty(CurrentPage.PageDescription) ? CurrentPage.PageDescription : "";
     string metaKeyword = !String.IsNullOrEmpty(CurrentPage.MetaKeyword) ? CurrentPage.MetaKeyword : "";
-    var mediaFile = !String.IsNullOrEmpty(CurrentPage.FeatureImage) ? CurrentPage.FeatureImage : !String.IsNullOrEmpty(CurrentPage.FeartureImage) ? CurrentPage.FeartureImage : null;
+    var mediaFile = !String.IsNullOrEmpty(CurrentPage.FeatureImage.ToString()) ? CurrentPage.FeatureImage : !String.IsNullOrEmpty(CurrentPage.FeartureImage.ToString()) ? CurrentPage.FeartureImage : null;
     var featureImageArticle = mediaFile != null && Umbraco.Media(mediaFile).umbracoFile.GetType() != typeof(Umbraco.Core.Dynamics.DynamicNull) ? "http://" + HttpContext.Current.Request.Url.Host + Umbraco.Media(mediaFile).umbracoFile : "";
     var listProducts = CurrentPage.AncestorOrSelf(1).Descendants("productPage").Where("Visible");
 }
@@ -225,6 +225,7 @@ fbq('track', 'PageView');
     </div>
     <!-- Scripts -->
     <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/js/jquery.cookie.js"></script>
     <script src="/assets/js/jquery.dropotron.min.js"></script>
     <script src="/assets/js/skel.min.js"></script>
     <script src="/assets/js/util.js"></script>
