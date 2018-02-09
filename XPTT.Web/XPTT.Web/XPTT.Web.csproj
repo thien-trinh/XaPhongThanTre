@@ -3270,6 +3270,32 @@
     <Content Include="App_Plugins\FastTrack\Views\PurchaseOrderPayment\PaymentForm.cshtml" />
     <Content Include="App_Plugins\FastTrack\Views\Shared\_RequireJsSubmitBtn.cshtml" />
     <Content Include="App_Plugins\FastTrack\Views\web.config" />
+    <Content Include="Views\FastTrack.cshtml" />
+    <Content Include="Views\ftAccount.cshtml" />
+    <Content Include="Views\ftBasket.cshtml" />
+    <Content Include="Views\ftBillingAddress.cshtml" />
+    <Content Include="Views\ftCatalog.cshtml" />
+    <Content Include="Views\ftCategory.cshtml" />
+    <Content Include="Views\ftChangePassword.cshtml" />
+    <Content Include="Views\ftCheckout.cshtml" />
+    <Content Include="Views\ftFinalSaleSummary.cshtml" />
+    <Content Include="Views\ftForgotPassword.cshtml" />
+    <Content Include="Views\ftLogin.cshtml" />
+    <Content Include="Views\ftPayment.cshtml" />
+    <Content Include="Views\ftPaymentMethod.cshtml" />
+    <Content Include="Views\ftPreSaleSummary.cshtml" />
+    <Content Include="Views\ftProduct.cshtml" />
+    <Content Include="Views\ftReceipt.cshtml" />
+    <Content Include="Views\ftShippingAddress.cshtml" />
+    <Content Include="Views\ftShipRateQuote.cshtml" />
+    <Content Include="Views\ftStore.cshtml" />
+    <Content Include="Views\Shared\_Address.cshtml" />
+    <Content Include="Views\Shared\_Footer.cshtml" />
+    <Content Include="Views\Shared\_Header.cshtml" />
+    <Content Include="Views\Shared\_Headline.cshtml" />
+    <Content Include="Views\Shared\_ProductBox.cshtml" />
+    <Content Include="Views\Shared\_ProductBoxList.cshtml" />
+    <Content Include="Views\Shared\_ProductPricing.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
