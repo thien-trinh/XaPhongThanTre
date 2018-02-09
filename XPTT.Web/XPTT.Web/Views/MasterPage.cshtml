@@ -10,7 +10,7 @@
     string metaKeyword = !String.IsNullOrEmpty(CurrentPage.MetaKeyword) ? CurrentPage.MetaKeyword : "";
     var mediaFile = !String.IsNullOrEmpty(CurrentPage.FeatureImage.ToString()) ? CurrentPage.FeatureImage : !String.IsNullOrEmpty(CurrentPage.FeartureImage.ToString()) ? CurrentPage.FeartureImage : null;
     var featureImageArticle = mediaFile != null && Umbraco.Media(mediaFile).umbracoFile.GetType() != typeof(Umbraco.Core.Dynamics.DynamicNull) ? "http://" + HttpContext.Current.Request.Url.Host + Umbraco.Media(mediaFile).umbracoFile : "";
-    var listProducts = CurrentPage.AncestorOrSelf(1).Descendants("productPage").Where("Visible");
+    IEnumerable<Merchello.Web.Models.VirtualContent.IProductContent> listProducts = CurrentPage.AncestorOrSelf(1).FeatureProducts;
 }
 
 <!DOCTYPE html>
@@ -106,7 +106,7 @@ fbq('track', 'PageView');
                                 <ul>
                                     @foreach (var item in listProducts)
                                     {
-                                        <li><a href="@item.Url">@item.PageName</a></li>
+                                        <li><a href="@item.Url">@item.Name</a></li>
                                     }
                                 </ul>
                             }
@@ -146,7 +146,7 @@ fbq('track', 'PageView');
                     <h2>100% sản phẩm được chiết xuất từ thiên nhiên 100%</h2>
                     <p>Sự khác biệt cơ bản giữa mỹ phẩm thiên nhiên và mỹ phẩm thường nằm ở Chất lượng nguyên liệu. Mỹ phẩm thiên nhiên nuôi dưỡng và phục hồi tế bào da, tóc bằng tinh dầu, chiết xuất và các hoạt chất khác từ thiên nhiên …</p>
                 </header>
-                @Html.Partial("ListProductsAtHomePage")
+                @Html.Partial("/Views/Partials/ListProductsAtHomePage.cshtml", listProducts)
             </section>
         </div>
         <div id="footer-wrapper">
@@ -174,29 +174,7 @@ fbq('track', 'PageView');
                         <p>
                             Cơ sở 4: 19 ngõ 298/26/25 Ngọc Lâm, quận Long Biên, Hà nội <br />
                             Tel: 09 345 090 23. Từ 19-22h.
-                        </p> @*<form method="post" action="#">
-                                <div class="row 50%">
-                                    <div class="6u 12u(mobile)">
-                                        <input name="name" placeholder="Name" type="text" />
-                                    </div>
-                                    <div class="6u 12u(mobile)">
-                                        <input name="email" placeholder="Email" type="text" />
-                                    </div>
-                                </div>
-                                <div class="row 50%">
-                                    <div class="12u">
-                                        <textarea name="message" placeholder="Message"></textarea>
-                                    </div>
-                                </div>
-                                <div class="row 50%">
-                                    <div class="12u">
-                                        <ul class="actions">
-                                            <li><input type="submit" value="Send Message" /></li>
-                                            <li><input type="reset" value="Clear form" /></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </form>*@
+                        </p> 
                     </section>
                     <section class="6u 12u(narrower)">
                         <div class="row 0%">
