@@ -574,6 +574,9 @@
     <Content Include="App_Plugins\ModelsBuilder\modelsbuilder.controller.js" />
     <Content Include="App_Plugins\ModelsBuilder\modelsbuilder.htm" />
     <Content Include="App_Plugins\ModelsBuilder\modelsbuilder.resource.js" />
+    <Content Include="assets\css\bootstrap-theme.css" />
+    <Content Include="assets\css\bootstrap.css" />
+    <Content Include="assets\css\bootstrap.min.css" />
     <Content Include="assets\css\font-awesome.min.css" />
     <Content Include="assets\css\ie8.css" />
     <Content Include="assets\css\ie9.css" />
@@ -585,14 +588,20 @@
     <Content Include="assets\css\images\overlay.png" />
     <Content Include="assets\css\main.css" />
     <Content Include="assets\fonts\fontawesome-webfont.svg" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="assets\js\bootstrap.min.js" />
     <Content Include="assets\js\ie\backgroundsize.min.htc" />
     <Content Include="assets\js\ie\html5shiv.js" />
     <Content Include="assets\js\ie\PIE.htc" />
     <Content Include="assets\js\ie\respond.min.js" />
     <Content Include="assets\js\jquery.dropotron.min.js" />
     <Content Include="assets\js\jquery.min.js" />
+    <Content Include="assets\js\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="assets\js\jquery.validate.min.js" />
+    <Content Include="assets\js\jquery.validate.unobtrusive.min.js" />
     <Content Include="assets\js\main.js" />
     <Content Include="assets\js\skel.min.js" />
+    <Content Include="assets\js\underscore.min.js" />
     <Content Include="assets\js\util.js" />
     <Content Include="config\grid.editors.config.js" />
     <Content Include="config\Lang\cs-CZ.user.xml" />
@@ -3263,8 +3272,6 @@
     <Content Include="config\applications.config" />
     <Content Include="config\404handlers.config" />
     <Content Include="App_Plugins\Merchello\assets\css\Merchello.css.map" />
-    <Content Include="App_Plugins\Merchello\client\css\merchello.ui.css.map" />
-    <Content Include="App_Plugins\Merchello\client\css\merchello.ui.min.css.map" />
     <Content Include="App_Plugins\Merchello\client\js\merchello.ui.js.map" />
     <Content Include="App_Plugins\Merchello\config\merchello.config" />
     <Content Include="App_Plugins\Merchello\Package.manifest" />
@@ -3324,6 +3331,11 @@
     <Content Include="Views\Shared\_ProductBox.cshtml" />
     <Content Include="Views\Shared\_ProductBoxList.cshtml" />
     <Content Include="Views\Shared\_ProductPricing.cshtml" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Views\Shared\_ModalPopup.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
