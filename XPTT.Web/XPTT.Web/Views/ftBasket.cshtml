@@ -2,27 +2,32 @@
 @using Merchello.FastTrack.Ui
 @using Merchello.Web
 @{
-    Layout = "FastTrack.cshtml";
+    Layout = "MasterPage.cshtml";
 }
 
-@Html.Partial("_Headline")
+<div class="wrapper">
+    <div class="container" id="main">
+        @Html.Partial("_Headline")
 
-@if (CurrentCustomer.Basket().Items.Any())
-{
-    @Html.Action("BasketForm", "StoreBasket", new { area = "Merchello" })
-
-    <div class="row">
-        <div class="col-lg-8">
-            <a href="@ExampleUiHelper.Content.GetStoreRoot().Url">Continue Shopping</a>
-        </div>
-        <div class="col-lg-4 text-right">
-            <a href="@ExampleUiHelper.Content.GetCheckout().Url" class="btn btn-primary">Checkout</a>
-        </div>
+        @if (CurrentCustomer.Basket().Items.Any())
+        {
+            @Html.Action("BasketForm", "StoreBasket", new { area = "Merchello" })
+         
+            <div class="col-lg-8">
+                <a href="/" style="font-weight: bold; color: red">Tiếp tục mua hàng</a>
+            </div>
+            <div class="col-lg-4 text-right">
+                <a href="@ExampleUiHelper.Content.GetCheckout().Url" class="btn btn-primary">Thanh Toán</a>
+            </div>
+           
+        }
+        else
+        {
+            <p>
+                <a href="">Không có gì trong giỏ hàng của bạn, hãy quay lại mua sắm nào.</a>
+            </p>
+        }
     </div>
-}
-else
-{
-    <p>
-        <a href="@ExampleUiHelper.Content.GetStoreRoot().Url">There's nothing in your shopping cart, start shopping!</a>
-    </p>
-}
+</div>
+
+        

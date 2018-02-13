@@ -116,6 +116,34 @@
       <HintPath>..\packages\Markdown.1.14.7\lib\net45\MarkdownSharp.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Merchello.Core, Version=2.6.6489.14468, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Merchello.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Merchello.Examine, Version=2.6.6489.14471, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Merchello.Examine.dll</HintPath>
+    </Reference>
+    <Reference Include="Merchello.FastTrack, Version=2.6.6484.37124, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Merchello.FastTrack.dll</HintPath>
+    </Reference>
+    <Reference Include="Merchello.FastTrack.Ui, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Merchello.FastTrack.Ui.dll</HintPath>
+    </Reference>
+    <Reference Include="Merchello.Providers, Version=2.6.6489.14478, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Merchello.Providers.dll</HintPath>
+    </Reference>
+    <Reference Include="Merchello.Web, Version=2.6.6489.14472, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Merchello.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Merchello.Web.Store, Version=2.6.6489.14479, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Merchello.Web.Store.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.0.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.0.6\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
       <Private>True</Private>
@@ -3307,6 +3335,8 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Code\Helpers\PageContentHelper.cs" />
+    <Content Include="App_Code\Extentions\CustomerExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

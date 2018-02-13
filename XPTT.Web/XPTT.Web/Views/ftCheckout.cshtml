@@ -3,13 +3,19 @@
 @using Merchello.Web
 
 @{
-    Layout = "FastTrack.cshtml";
+    Layout = "MasterPage.cshtml";
     if (CurrentCustomer.Basket().IsEmpty)
     {
         Response.Redirect(ExampleUiHelper.Content.GetStoreRoot().Url);
     }
 }
 
-@Html.Partial("_Headline")
+<div class="wrapper">
+    <div class="container" id="main">
+        @Html.Partial("_Headline")
 
-@RenderBody()
+        @RenderBody()
+    </div>
+</div>
+
+    

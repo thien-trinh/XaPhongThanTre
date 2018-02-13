@@ -1689,9 +1689,10 @@
 		header > p {
 			display: block;
 			color: #f35858;
-			padding: 0.75em 0 1em 0;
+			padding: 0.75em 0 0.5em 0;
 			font-size: 1.5em;
 			line-height: 1.5em;
+		    margin-bottom: 0px;
 		}
 
 		header.major {
@@ -1922,7 +1923,7 @@
 /* Button */
 
 	input[type="button"],
-	input[type="submit"],
+	/*input[type="submit"],*/
 	input[type="reset"],
 	button,
 	.button {
@@ -1975,10 +1976,10 @@
 /* Wrappers */
 
 	.wrapper {
-		position: relative;
-		background: #fff;
-		overflow-x: hidden;
-		padding: 3em 0 3em 0;
+		position: relative !important;
+		background: #fff !important;
+		overflow-x: hidden !important;
+		padding: 3em 0 3em 0 !important;
 	}
 
     .wrapper + .wrapper{
@@ -3502,3 +3503,5 @@ input[type="button"].btn-block {
 #mc_embed_signup div.mce_inline_error #mce-success-response {
     display: none !important;
 }
+
+.table td.image  img{ display: inline; width: 50px}

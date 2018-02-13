@@ -24,7 +24,8 @@
                 <span class="greenText">
                     <a href="@item.Url">@item.Name</a>
                 </span>
-                <br /><span class="costText">Giá: @String.Format("{0:n0}", item.Price) VND</span>
+                <br/><span class="costText">Giá: @String.Format("{0:n0}", item.Price) VND</span>
+                @Html.Action("AddProductToBasketForm", "StoreBasket", new { area = "Merchello", model = item })
             </p>
         </section>
         }

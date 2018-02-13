@@ -533,12 +533,12 @@ MUI.Basket = {
                 }).then(function(results) {
 
                     // update the line items sub totals
-                    $.each(results.UpdatedItems, function(idx, item) {
-                        var hid = $('input:hidden[value="' + item.Key + '"]')
+                    $.each(results.UpdatedItems, function (idx, item) {
+                        var hid = $('input:hidden[value="' + item.Key + '"]');
                         if (hid.length > 0) {
                             var subtotal = $(hid).closest('tr').find('[data-muivalue="linetotal"]');
                             if (subtotal.length > 0) {
-                                $(subtotal).html(item.FormattedTotal);
+                                $(subtotal).html(item.FormattedTotal.replace("₫", "").replace(".00", "").replace(/,/g, "").replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " VNĐ");
                             }
                         }
                     });
@@ -546,7 +546,7 @@ MUI.Basket = {
                     // set the new basket total
                     var total = $(frmRef).find('[data-muivalue="total"]');
                     if (total.length > 0) {
-                        $(total).html(results.FormattedTotal);
+                        $(total).html(results.FormattedTotal.replace("₫", "").replace(".00", "").replace(/,/g, "").replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " VNĐ");
                     }
 
                     // Emit the event so that labels can update if handled
@@ -994,12 +994,13 @@ MUI.WishList = {
                 }).then(function(results) {
 
                     // update the line items sub totals
-                    $.each(results.UpdatedItems, function(idx, item) {
+                    $.each(results.UpdatedItems, function (idx, item) {
+                      
                         var hid = $('input:hidden[value="' + item.Key + '"]')
                         if (hid.length > 0) {
                             var subtotal = $(hid).closest('tr').find('[data-muivalue="linetotal"]');
                             if (subtotal.length > 0) {
-                                $(subtotal).html(item.FormattedTotal);
+                                $(subtotal).html(item.FormattedTotal.replace("₫", "").replace(".00", "").replace(/,/g, "").replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " VNĐ");
                             }
                         }
                     });
@@ -1007,7 +1008,7 @@ MUI.WishList = {
                     // set the new basket total
                     var total = $(frmRef).find('[data-muivalue="total"]');
                     if (total.length > 0) {
-                        $(total).html(results.FormattedTotal);
+                        $(total).html(results.FormattedTotal.replace("₫", "").replace(".00", "").replace(/,/g, "").replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " VNĐ");
                     }
 
                 }, function(err) {

@@ -42,7 +42,7 @@
                             var mediaId = product.GetPropertyValue<string>("image");
                             var image = Umbraco.TypedMedia(mediaId);
 
-                            <a href="@product.Url"><img src="@image.GetCropUrl(width: 20)" alt="@product.Name" width="20"/></a>
+                            <a href="@product.Url"><img src="@image.GetCropUrl(width: 50)" alt="@product.Name" width="20"/></a>
                         }
                         <a href="@product.Url">
                             <span>@product.Name</span>
@@ -58,7 +58,7 @@
                         <span>@Model.Items[i].Name</span>
                     }
                 </td>
-                <td>@Model.Items[i].Amount.AsFormattedCurrency()</td>
+                <td>@String.Format("{0:n0}", @Model.Items[i].Amount) VNĐ</td>
                 <td>
                     @if (isProduct)
                     {
@@ -70,7 +70,7 @@
                         @Html.HiddenFor(model => Model.Items[i].Quantity)
                     }
                 </td>
-                <td data-muivalue="linetotal">@Model.Items[i].Total().AsFormattedCurrency()</td>
+                <td data-muivalue="linetotal">@String.Format("{0:n0}", @Model.Items[i].Total()) VNĐ</td>
                 <td class="text-right">
                     @if (Model.WishListEnabled && isProduct) // only products can be added to the wishlist
                     {
@@ -78,7 +78,7 @@
                         @Html.ActionLink("Wish List +", "MoveItemToWishList", "StoreBasket", new { area = "Merchello", lineItemKey = Model.Items[i].Key, successRedirectId = currentPage.Id }, new { @class = "btn btn-info" })
                     }
 
-                    @Html.ActionLink("Remove", "RemoveBasketItem", "StoreBasket", new { area = "Merchello", lineItemKey = Model.Items[i].Key, redirectId = currentPage.Id }, new { @class = "btn btn-danger" })
+                    @Html.ActionLink("Xóa", "RemoveBasketItem", "StoreBasket", new { area = "Merchello", lineItemKey = Model.Items[i].Key, redirectId = currentPage.Id }, new { @class = "btn btn-danger" })
                 </td>
             </tr>
 
@@ -86,7 +86,7 @@
         }
         <tr>
             <td colspan="3" class="text-right"><strong>Sub Total</strong></td>
-            <td colspan="2" data-muivalue="total"><strong>@Model.Total().AsFormattedCurrency()</strong></td>
+            <td colspan="2" data-muivalue="total"><strong>@String.Format("{0:n0}", Model.Total()) VNĐ</strong></td>
         </tr>
         <tr class="hide">
             <td colspan="3">&nbsp;</td>
