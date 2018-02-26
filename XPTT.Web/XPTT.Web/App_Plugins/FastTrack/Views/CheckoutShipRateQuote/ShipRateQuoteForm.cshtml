@@ -8,20 +8,20 @@
 @{
     Model.SuccessRedirectUrl = ExampleUiHelper.CheckoutWorkflow.GetPageForStage(CheckoutStage.PaymentMethod).Url;
 }
-<h3>Shipping Rate Quote</h3>
+<h3>Phương thức giao hàng</h3>
 @using (Html.BeginUmbracoForm<CheckoutShipRateQuoteController>("SaveShipRateQuote", new { area = "FastTrack" }))
 {
     <div class="row">
         <div class="col-md-12 form-group">
-            @Html.LabelFor(x => x.ShippingQuotes)
+            @Html.LabelFor(x => x.ShippingQuotes,"Phí vận chuyển")
             @Html.DropDownListFor(x => x.ShipMethodKey, Model.ShippingQuotes, new { @class = "form-control"})
         </div>
     </div>
     @Html.HiddenFor(x => x.SuccessRedirectUrl)
     <div>
         @Html.AntiForgeryToken()
-        <a href="@ExampleUiHelper.CheckoutWorkflow.GetPageForStage(CheckoutStage.ShippingAddress).Url" class="btn btn-default">Back</a>
-        <input type="submit" class="btn btn-default pull-right" value="Next"/>
+        <a href="@ExampleUiHelper.CheckoutWorkflow.GetPageForStage(CheckoutStage.ShippingAddress).Url" class="btn btn-default">Quay lại</a>
+        <input type="submit" class="btn btn-default pull-right" value="Thanh toán"/>
     </div>
 }
 

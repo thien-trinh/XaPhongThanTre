@@ -7,13 +7,13 @@
 @{
     Model.SuccessRedirectUrl = ExampleUiHelper.Content.GetReceipt().Url;
 }
-<h3>Cash Payment</h3>
+<h3>Bạn đã chọn thanh toán khi nhận hàng</h3>
 @using (Html.BeginUmbracoForm<CashPaymentController>("Process", new { area = "FastTrack" }))
 {
     <div>
         @Html.AntiForgeryToken()
         @Html.HiddenFor(x => x.SuccessRedirectUrl)
-        <a href="@ExampleUiHelper.CheckoutWorkflow.GetPageForStage(CheckoutStage.PaymentMethod).Url" class="btn btn-default">Back</a>
+        <a href="@ExampleUiHelper.CheckoutWorkflow.GetPageForStage(CheckoutStage.PaymentMethod).Url" class="btn btn-default">Quay lại</a>
         @Html.Partial("_RequireJsSubmitBtn", Model)
     </div>
 }

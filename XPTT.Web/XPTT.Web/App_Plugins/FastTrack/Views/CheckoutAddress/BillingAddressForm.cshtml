@@ -16,26 +16,32 @@
 
 }
 
-<h3>Billing Address</h3>
+<h3 class="blockHeader">Địa chỉ cá nhân</h3>
 @using (Html.BeginUmbracoForm<CheckoutAddressController>("SaveBillingAddress", new { area = "FastTrack" }, new { data_muistage = "BillingAddress" }))
 {
 
     <div class="row">
         <div class="col-md-6 form-group">
-            @Html.LabelFor(x => x.FirstName) *
-            @Html.TextBoxFor(x => x.FirstName, new { @class = "form-control" })
+            @Html.LabelFor(x => x.FirstName, "Tên") *
+            @Html.TextBoxFor(x => x.FirstName, new {@class = "form-control"})
             @Html.ValidationMessageFor(x => x.FirstName)
         </div>
 
         <div class="col-md-6 form-group">
-            @Html.LabelFor(x => x.LastName) *
-            @Html.TextBoxFor(x => x.LastName, new { @class = "form-control" })
+            @Html.LabelFor(x => x.LastName, "Họ") *
+            @Html.TextBoxFor(x => x.LastName, new {@class = "form-control"})
             @Html.ValidationMessageFor(x => x.LastName)
         </div>
     </div>
     <div class="row">
         <div class="col-md-12 form-group">
-            @Html.LabelFor(x => x.Email) *
+            @Html.LabelFor(x => x.Phone, "Điện thoại")
+            @Html.TextBoxFor(x => x.Phone, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 form-group">
+            @Html.LabelFor(x => x.Email, "Email") *
             @Html.TextBoxFor(x => x.Email, new { @class = "form-control" })
             @Html.ValidationMessageFor(x => x.Email)
         </div>
@@ -44,24 +50,24 @@
             @Html.TextBoxFor(x => x.Organization, new { @class = "form-control" })
         </div>
         <div class="col-md-12 form-group">
-            @Html.LabelFor(x => x.Address1)
+            @Html.LabelFor(x => x.Address1, "Địa chỉ 1")
             @Html.TextBoxFor(x => x.Address1, new { @class = "form-control" })
             @Html.ValidationMessageFor(x => x.Address1)
         </div> 
 
         <div class="col-md-12 form-group hidden">
-            @Html.LabelFor(x => x.Address2)
+            @Html.LabelFor(x => x.Address2, "Địa chỉ 2")
             @Html.TextBoxFor(x => x.Address2, new { @class = "form-control" })
         </div>
     </div>
     <div class="row">
         <div class="col-md-6 form-group">
-            @Html.LabelFor(x => x.Locality)
+            @Html.LabelFor(x => x.Locality,"Thành phố")
             @Html.TextBoxFor(x => x.Locality, new { @class = "form-control" })
             @Html.ValidationMessageFor(x => x.Locality)
         </div>
-        <div class="col-md-6 form-group hidden">
-            @Html.LabelFor(x => x.Region)
+        <div class="col-md-6 form-group">
+            @Html.LabelFor(x => x.Region, "Tình thành")
             @Html.TextBoxFor(x => x.Region, new { @class = "form-control", data_muivalue = "region", @style = "display:none;" })
             <select class="form-control" data-muiaction="updateregion">
                 <option>@StoreFormsResource.PleaseSelect</option>
@@ -71,26 +77,21 @@
     </div>
     <div class="row">
         <div class="col-md-6 form-group">
-            @Html.LabelFor(x => x.PostalCode) *
+            @Html.LabelFor(x => x.PostalCode, "Mã bưu điện") *
             @Html.TextBoxFor(x => x.PostalCode, new { @class = "form-control" , @value="10000" })
-            @*@Html.ValidationMessageFor(x => x.PostalCode)*@
+            @Html.ValidationMessageFor(x => x.PostalCode)
         </div>
         <div class="col-md-6 form-group">
-            @Html.LabelFor(x => x.CountryCode)
+            @Html.LabelFor(x => x.CountryCode, "Quốc gia")
             @Html.DropDownListFor(x => x.CountryCode, Model.Countries, StoreFormsResource.PleaseSelect, new { @class = "form-control", data_muiaction = "populateregion" })
-            @*@Html.ValidationMessageFor(x => x.CountryCode)*@
+            @Html.ValidationMessageFor(x => x.CountryCode)
         </div>
     </div>
-    <div class="row">
-        <div class="col-md-12 form-group">
-            @Html.LabelFor(x => x.Phone)
-            @Html.TextBoxFor(x => x.Phone, new { @class = "form-control" })
-        </div>
-    </div>
+    
     <div class="row">
         <div class="col-md-12 form-group checkbox">
             <label>
-                @Html.CheckBoxFor(x => x.UseForShipping) Use for shipping address
+                @Html.CheckBoxFor(x => x.UseForShipping) Sử dụng địa chỉ này để giao hàng
             </label>
         </div>
     </div>
@@ -101,6 +102,6 @@
     @Html.HiddenFor(x => x.SuccessUrlShipRateQuote)
     @Html.AntiForgeryToken()
     <div class="text-right">
-        <input type="submit" class="btn btn-default" value="Next" />
+        <input type="submit" class="btn btn-default" value="Tiếp tục" />
     </div>
 }

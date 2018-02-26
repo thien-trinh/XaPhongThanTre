@@ -254,12 +254,43 @@ fbq('track', 'PageView');
     <div id="cfacebook">
         <a href="javascript:;" class="chat_fb" onclick="return:false"><i class="fa fa-facebook-square"></i> Hỗ trợ - Đặt Hàng</a>
         <div class="fchat">
-            <div class="fb-page" data-tabs="messages" data-href="https://www.facebook.com/XaPhongThanTre/" data-width="250" data-height="400" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="false"><blockquote cite="https://www.facebook.com/XaPhongThanTre/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/XaPhongThanTre/">Xà phòng than tre -Bamboo Charcoal Soap</a></blockquote></div>
+            <script>
+      window.fbMessengerPlugins = window.fbMessengerPlugins || {
+        init: function () {
+          FB.init({
+            appId            : '1678638095724206',
+            autoLogAppEvents : true,
+            xfbml            : true,
+            version          : 'v2.10'
+          });
+        }, callable: []
+      };
+      window.fbAsyncInit = window.fbAsyncInit || function () {
+        window.fbMessengerPlugins.callable.forEach(function (item) { item(); });
+        window.fbMessengerPlugins.init();
+      };
+      setTimeout(function () {
+        (function (d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) { return; }
+          js = d.createElement(s);
+          js.id = id;
+          js.src = "//connect.facebook.net/en_US/sdk.js";
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+      }, 0);
+            </script>
+
+            <div class="fb-customerchat"
+                 page_id="379605262421356"
+                 ref="">
+            </div>
         </div>
     </div>
     <!-- Go to www.addthis.com/dashboard to customize your tools -->
 <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4ec085673765e5e7"></script>
 
-    
+ 
+ 
 </body>
 </html>

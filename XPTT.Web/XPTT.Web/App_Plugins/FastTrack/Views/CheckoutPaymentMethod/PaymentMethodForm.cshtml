@@ -8,12 +8,12 @@
     Model.SuccessRedirectUrl = ExampleUiHelper.CheckoutWorkflow.GetPageForStage(CheckoutStage.Payment).Url;
 }
 
-<h3>Payment Method Selection</h3>
+<h3 class="blockHeader">Chọn phương thức thanh toán</h3>
 @using (Html.BeginUmbracoForm<CheckoutPaymentMethodController>("SetPaymentMethod", new { area = "FastTrack" }))
 {
     <div class="row">
         <div class="col-md-12 form-group">
-            @Html.LabelFor(x => x.PaymentMethods)
+            @Html.LabelFor(x => x.PaymentMethods,"Phương thức thanh toán")
             @Html.DropDownListFor(x => x.PaymentMethodKey, Model.PaymentMethods, new { @class = "form-control" })
         </div>
     </div>
@@ -21,7 +21,7 @@
     <div>
         @Html.AntiForgeryToken()
         @Html.HiddenFor(x => x.SuccessRedirectUrl)
-        <a href="@ExampleUiHelper.CheckoutWorkflow.GetPageForStage(CheckoutStage.ShipRateQuote).Url" class="btn btn-default">Back</a>
-        <input type="submit" class="btn btn-default pull-right" value="Next" />
+        <a href="@ExampleUiHelper.CheckoutWorkflow.GetPageForStage(CheckoutStage.ShipRateQuote).Url" class="btn btn-default">Quay lại</a>
+        <input type="submit" class="btn btn-default pull-right" value="Thanh toán" />
     </div>
 }

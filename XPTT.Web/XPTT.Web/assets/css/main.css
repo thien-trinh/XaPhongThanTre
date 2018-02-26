@@ -1827,7 +1827,7 @@
 	}
 
 	form label {
-		display: block;
+		/*display: block;*/
 		font-weight: 300;
 		color: #52575c;
 		margin: 0 0 0.5em 0;
@@ -3505,3 +3505,8 @@ input[type="button"].btn-block {
 }
 
 .table td.image  img{ display: inline; width: 50px}
+
+
+h3.blockHeader,h4.blockHeader {
+    color: darkgreen;font-weight: bold;
+}

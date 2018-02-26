@@ -8,7 +8,7 @@
 @using Umbraco.Web
 
 <div class="container-fluid">
-    <h3>Order Summary</h3>
+    <h3 class="blockHeader">Đơn hàng của bạn</h3>
     <div class="row">
         <div class="col-md-12">
             <div class="panel panel-default">
@@ -18,10 +18,10 @@
                     <table class="table table-striped">
                         <thead>
                         <tr>
-                            <th colspan="2">Name</th>
-                            <th>Unit Price</th>
-                            <th>Quantity</th>
-                            <th>Price</th>
+                            <th colspan="2">Sản phẩm</th>
+                            <th>Đơn giá</th>
+                            <th>Số lượng</th>
+                            <th>Thành tiền</th>
                         </tr>
                         </thead>
                         @foreach (var item in Model.Items)
@@ -37,15 +37,15 @@
                                     }
                                 </td>
                                 <td>@item.Name</td>
-                                <td class="text-right">@item.Amount.AsFormattedCurrency()</td>
+                                <td class="text-right">@String.Format("{0:n0}", @item.Amount)</td>
                                 <td class="text-center">@item.Quantity</td>
-                                <td class="text-right">@item.Total().AsFormattedCurrency()</td>
+                                <td class="text-right">@String.Format("{0:n0}", @item.Total()) VNĐ</td>
                             </tr>
                         }
                         <tfoot>
                         <tr>
                             <td colspan="4" class="text-right"><strong>Sub Total:</strong></td>
-                            <td class="text-right"><strong>@Model.Total.AsFormattedCurrency()</strong></td>
+                            <td class="text-right"><strong>@String.Format("{0:n0}", Model.Total) VNĐ</strong></td>
                         </tr>
                         </tfoot>
                     </table>
@@ -61,7 +61,7 @@
 
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h4>Billing Address @RenderEdit(Model, "billing")</h4>
+                    <h4 class="blockHeader">Địa chỉ thanh toán @RenderEdit(Model, "billing")</h4>
                 </div>
                 <div class="panel-body">
                     @Html.Partial("_Address", Model.BillingAddress)
@@ -72,7 +72,7 @@
         <div class="col-md-6 basket-summary">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h4>Shipping Address @RenderEdit(Model, "shipping")</h4>
+                    <h4 class="blockHeader">Địa chỉ giao hàng @RenderEdit(Model, "shipping")</h4>
                 </div>
                 <div class="panel-body">
                     @Html.Partial("_Address", Model.ShippingAddress)

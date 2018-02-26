@@ -1,5 +1,10 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<FtReceipt>
 @{
-	Layout = "FastTrack.cshtml";
+	Layout = "MasterPage.cshtml";
 }
-@Html.Action("SalesReceipt", "CheckoutSummary", new { area = "FastTrack" })
+
+<div class="wrapper">
+    <div class="container" id="main">
+        @Html.Action("SalesReceipt", "CheckoutSummary", new { area = "FastTrack" })
+    </div>
+</div>

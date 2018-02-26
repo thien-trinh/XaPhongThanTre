@@ -6,14 +6,14 @@
 @using Umbraco.Web
 
 <div class="container-fluid">
-    <h3>Sales Receipt</h3>
+    <h3 class="blockHeader">Hóa đơn mua hàng</h3>
     <h4>Invoice @Model.InvoiceNumber <span class="text-right">@Model.InvoiceDate.ToShortDateString()</span></h4>
     <div class="row">
         <div class="col-md-6 basket-summary">
 
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h4>Billing Address</h4>
+                    <h4 class="blockHeader"> Địa chỉ thanh toán</h4>
                 </div>
                 <div class="panel-body">
                     @Html.Partial("_Address", Model.BillingAddress)
@@ -26,7 +26,7 @@
             <div class="col-md-6 basket-summary">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h4>Shipping Address</h4>
+                        <h4 class="blockHeader">Địa chỉ giao hàng</h4>
                     </div>
                     <div class="panel-body">
                         @Html.Partial("_Address", Model.ShippingAddress)
@@ -39,16 +39,16 @@
     <div class="row">
         <div class="col-md-12">
             <div class="panel panel-default">
-                <div class="panel-heading"><h4>Items</h4>
+                <div class="panel-heading"><h4 class="blockHeader">Mặt hàng</h4>
                 </div>
                 <div class="panel-body">
                     <table class="table table-striped">
                         <thead>
                         <tr>
-                            <th colspan="2">Name</th>
-                            <th>Unit Price</th>
-                            <th>Quantity</th>
-                            <th>Price</th>
+                            <th colspan="2">Tên</th>
+                            <th>Đơn giá</th>
+                            <th>Số lượng</th>
+                            <th>Thành tiền</th>
                         </tr>
                         </thead>
                         @foreach (var item in Model.Items.Where(x => x.LineItemType == LineItemType.Product))
@@ -63,14 +63,14 @@
                                     }
                                 </td>
                                 <td>@item.Name</td>
-                                <td class="text-right">@item.Amount.AsFormattedCurrency()</td>
+                                <td class="text-right">@String.Format("{0:n0}", @item.Amount)</td>
                                 <td class="text-center">@item.Quantity</td>
-                                <td class="text-right">@item.Total().AsFormattedCurrency()</td>
+                                <td class="text-right">@String.Format("{0:n0}", @item.Total()) VNĐ</td>
                             </tr>
                         }
                         <tr>
-                            <td colspan="4" class="text-right"><strong>Sub Total:</strong></td>
-                            <td class="text-right"><strong>@Model.Items.Where(x => x.LineItemType == LineItemType.Product).Sum(x => x.Total()).AsFormattedCurrency()</strong></td>
+                            <td colspan="4" class="text-right"><strong>Tổng:</strong></td>
+                            <td class="text-right"><strong>@String.Format("{0:n0}", Model.Items.Where(x => x.LineItemType == LineItemType.Product).Sum(x => x.Total())) VNĐ</strong></td>
                         </tr>
                         @foreach (var item in Model.Items.Where(x => x.LineItemType != LineItemType.Product))
                         {
@@ -91,19 +91,19 @@
                                 <td colspan="3" class="text-right">
                                     @if (item.LineItemType == LineItemType.Discount)
                                     {
-                                        <span>(@item.Total().AsFormattedCurrency())</span>
+                                        <span>(@String.Format("{0:n0}", @item.Total()))</span>
                                     }
                                     else
                                     {
-                                        @item.Total().AsFormattedCurrency()
+                                        @String.Format("{0:n0} VNĐ", @item.Total()) 
                                     }
                                 </td>
                             </tr>
                         }
                         <tfoot>
                         <tr>
-                            <td colspan="4" class="text-right"><strong>Total:</strong></td>
-                            <td class="text-right"><strong>@Model.Total.AsFormattedCurrency()</strong></td>
+                            <td colspan="4" class="text-right"><strong>Tổng cộng:</strong></td>
+                            <td class="text-right"><strong>@String.Format("{0:n0} VNĐ", @Model.Total) </strong></td>
                         </tr>
                         </tfoot>
                     </table>
