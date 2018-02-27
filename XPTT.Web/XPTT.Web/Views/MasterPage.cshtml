@@ -9,10 +9,10 @@
 @{
     var homepage = Umbraco.TypedContentAtRoot().First() as IPublishedContent;
     var isHomepage = CurrentPage.DocumentTypeAlias == "homePage";
-    string metaTitle = !String.IsNullOrEmpty(CurrentPage.MetaTitle) ? CurrentPage.MetaTitle : CurrentPage.PageName;
-    string metaDescription = !String.IsNullOrEmpty(CurrentPage.MetaDescription) ? CurrentPage.MetaDescription : !String.IsNullOrEmpty(CurrentPage.PageDescription) ? CurrentPage.PageDescription : "";
-    string metaKeyword = !String.IsNullOrEmpty(CurrentPage.MetaKeyword) ? CurrentPage.MetaKeyword : "";
-    var mediaFile = !String.IsNullOrEmpty(CurrentPage.FeatureImage.ToString()) ? CurrentPage.FeatureImage : !String.IsNullOrEmpty(CurrentPage.FeartureImage.ToString()) ? CurrentPage.FeartureImage : null;
+    string metaTitle = !String.IsNullOrEmpty(CurrentPage.MetaTitle) ? CurrentPage.MetaTitle : (!String.IsNullOrEmpty(CurrentPage.GetPropertyValue<string>("pageTitle")) ? CurrentPage.GetPropertyValue<string>("pageTitle") : CurrentPage.PageName);
+    string metaDescription = !String.IsNullOrEmpty(CurrentPage.GetPropertyValue<string>("metaDescription")) ? CurrentPage.GetPropertyValue<string>("metaDescription") : !String.IsNullOrEmpty(CurrentPage.PageDescription) ? CurrentPage.PageDescription : "";
+    string metaKeyword = !String.IsNullOrEmpty(CurrentPage.GetPropertyValue<string>("metaKeywords")) ? CurrentPage.GetPropertyValue<string>("metaKeywords") : "";
+    var mediaFile = !String.IsNullOrEmpty(CurrentPage.FeatureImage.ToString()) ? CurrentPage.FeatureImage : null;
     var featureImageArticle = mediaFile != null && Umbraco.Media(mediaFile).umbracoFile.GetType() != typeof(Umbraco.Core.Dynamics.DynamicNull) ? "http://" + HttpContext.Current.Request.Url.Host + Umbraco.Media(mediaFile).umbracoFile : "";
     IEnumerable<Merchello.Web.Models.VirtualContent.IProductContent> listProducts = homepage != null ?
         homepage.GetPropertyValue<IEnumerable<Merchello.Web.Models.VirtualContent.IProductContent>>("FeatureProducts")

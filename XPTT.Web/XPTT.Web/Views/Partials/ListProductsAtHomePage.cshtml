@@ -3,7 +3,7 @@
 @using Merchello.Core
 @{
     
-    var selection = @Model;
+    var selection = @Model.OrderBy(p=>p.Key);
 }
 
    

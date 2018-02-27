@@ -67,7 +67,7 @@
             @Html.ValidationMessageFor(x => x.Locality)
         </div>
         <div class="col-md-6 form-group">
-            @Html.LabelFor(x => x.Region, "Tình thành")
+            @Html.LabelFor(x => x.Region, "Tỉnh")
             @Html.TextBoxFor(x => x.Region, new { @class = "form-control", data_muivalue = "region", @style = "display:none;" })
             <select class="form-control" data-muiaction="updateregion">
                 <option>@StoreFormsResource.PleaseSelect</option>
@@ -78,7 +78,7 @@
     <div class="row">
         <div class="col-md-6 form-group">
             @Html.LabelFor(x => x.PostalCode, "Mã bưu điện") *
-            @Html.TextBoxFor(x => x.PostalCode, new { @class = "form-control" , @value="10000" })
+            @Html.TextBoxFor(x => x.PostalCode, new { @class = "form-control" , @Value="10000" })
             @Html.ValidationMessageFor(x => x.PostalCode)
         </div>
         <div class="col-md-6 form-group">
