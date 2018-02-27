@@ -21,8 +21,14 @@
     <div class="row">
         <div class="col-md-12 form-group">
             @Html.LabelFor(x => x.Name, "Họ và Tên") *
-            @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+            @Html.TextBoxFor(x => x.Name, new {@class = "form-control"})
             @Html.ValidationMessageFor(x => x.Name)
+        </div>
+        <div class="row">
+            <div class="col-md-12 form-group">
+                @Html.LabelFor(x => x.Phone)
+                @Html.TextBoxFor(x => x.Phone, new { @class = "form-control" })
+            </div>
         </div>
         <div class="col-md-12 form-group">
             @Html.LabelFor(x => x.Email) *
@@ -52,31 +58,25 @@
         </div>
         <div class="col-md-6 form-group">
             @Html.LabelFor(x => x.Region, "Tỉnh")
-            @Html.TextBoxFor(x => x.Region, new { @class = "form-control", data_muivalue = "region", @style = "display:none;" })
-            <select class="form-control" data-muiaction="updateregion">
-                <option>@StoreFormsResource.PleaseSelect</option>
-            </select>
+            @Html.TextBoxFor(x => x.Region, new { @class = "form-control" })
+           
             @Html.ValidationMessageFor(x => x.Region)
         </div>
     </div>
     <div class="row">
-        <div class="col-md-6 form-group">
+        <div class="col-md-6 form-group hidden">
             @Html.LabelFor(x => x.PostalCode, "Mã bưu điện") *
-            @Html.TextBoxFor(x => x.PostalCode, new { @class = "form-control" })
+            @Html.TextBoxFor(x => x.PostalCode, new { @class = "form-control",@Value="10000" })
             @Html.ValidationMessageFor(x => x.PostalCode)
         </div>
-        <div class="col-md-6 form-group">
+        <div class="col-md-6 form-group hidden">
             @Html.LabelFor(x => x.CountryCode, "Quốc gia")
-            @Html.DropDownListFor(x => x.CountryCode, Model.Countries, StoreFormsResource.PleaseSelect, new { @class = "form-control", data_muiaction = "populateregion" })
+            @Html.TextBoxFor(x => x.CountryCode, new { @class = "form-control", @Value = "VN" })
+            @*@Html.DropDownListFor(x => x.CountryCode, Model.Countries, StoreFormsResource.PleaseSelect, new { @class = "form-control", data_muiaction = "populateregion",  })*@
             @Html.ValidationMessageFor(x => x.CountryCode)
         </div>
     </div>
-    <div class="row">
-        <div class="col-md-12 form-group">
-            @Html.LabelFor(x => x.Phone)
-            @Html.TextBoxFor(x => x.Phone, new { @class = "form-control" })
-        </div>
-    </div>
+    
 
     @Html.HiddenFor(x => x.Key)
     @Html.HiddenFor(x => x.SuccessRedirectUrl)
