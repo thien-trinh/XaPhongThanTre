@@ -3346,6 +3346,7 @@
     <Content Include="assets\fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="Views\Shared\_ModalPopup.cshtml" />
     <Content Include="App_Plugins\Merchello\views\PayPalExpressPayment\PaymentForm.cshtml" />
+    <Content Include="Views\Merchello\Notification\Orderconfirmation.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
