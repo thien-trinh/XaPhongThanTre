@@ -133,6 +133,10 @@
       <HintPath>..\packages\Merchello.FastTrack.2.6.0\lib\net45\Merchello.FastTrack.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Merchello.FastTrack.Ui, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Dlls\Merchello.FastTrack.Ui.dll</HintPath>
+    </Reference>
     <Reference Include="Merchello.Providers, Version=2.6.6489.14478, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Merchello.Core.2.6.0\lib\net45\Merchello.Providers.dll</HintPath>
       <Private>True</Private>
@@ -632,6 +636,8 @@
     <Content Include="config\Lang\sv-SE.user.xml" />
     <Content Include="config\Lang\zh-CN.user.xml" />
     <Content Include="default.aspx" />
+    <Content Include="Dlls\Merchello.FastTrack.dll" />
+    <Content Include="Dlls\Merchello.FastTrack.Ui.dll" />
     <Content Include="Global.asax" />
     <Content Include="images\HomeCover2.jpg" />
     <Content Include="images\HomeCover3.jpg" />
