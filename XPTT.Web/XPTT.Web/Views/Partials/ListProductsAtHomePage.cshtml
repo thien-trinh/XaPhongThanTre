@@ -12,9 +12,9 @@
         @foreach (var item in selection)
         {
             var featureImage = item.GetPropertyValue<string>("image") != null ? Umbraco.Media(item.GetPropertyValue<string>("image")).umbracoFile : "";
-        <section class="6u 12u(narrower) feature">
+        <section class="6u 12u(narrower) feature product-item">
             <div class="image-wrapper first">
-                <a href="@item.Url" class="image featured"><img src="@featureImage" alt="" /></a>
+                <a href="@item.Url" class="image featured product-@item.Key"><img src="@featureImage" alt="" /></a>
             </div>
             <p>
                 <span class="greenText">

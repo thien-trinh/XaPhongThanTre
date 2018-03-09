@@ -133,6 +133,9 @@ $(document).ready(function () {
             $('.modal').hide();
         }
     });
+
+    
+
 });
 
 function openModalPopup() {

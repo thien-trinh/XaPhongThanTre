@@ -27,7 +27,7 @@
             // If the product has variants, we MUST determine which variant the customer intends to purchase
             // so we need to give them a selection of options so that they make choices.  The collection of choices (one per options)
             // is used to determine which variant they intend to purchase.
-            <a data-muivalue="product" data-muikey="@product.Key">
+            <a data-muivalue="product" data-muikey="@product.Key" class="add-to-cart">
                 @if (hasVariants)
                 {
                 var index = 0;
@@ -56,7 +56,7 @@
                 @Html.HiddenFor(x => x.ProductKey)
                 @Html.HiddenFor(x => x.SuccessRedirectUrl)
                 @Html.AntiForgeryToken()
-                <input class="btn btn-danger btn-small" type="submit" value="Mua ngay" class="" />
+                <input class="btn btn-danger btn-small" type="submit" value="Mua ngay" />
                 
             </a>
         }

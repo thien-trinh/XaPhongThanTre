@@ -75,20 +75,23 @@
 
     <!-- Facebook Pixel Code -->
     <script>
-!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
-document,'script','https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1332725430083744'); // Insert your pixel ID here.
-fbq('track', 'PageView');
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '403627420086274');
+  fbq('track', 'PageView');
     </script>
     <noscript>
         <img height="1" width="1" style="display:none"
-             src="https://www.facebook.com/tr?id=1332725430083744&ev=PageView&noscript=1" />
+             src="https://www.facebook.com/tr?id=403627420086274&ev=PageView&noscript=1" />
     </noscript>
-    <!-- DO NOT MODIFY -->
     <!-- End Facebook Pixel Code -->
+
     @*<script id="mcjs" type="text/javascript">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/2f2bbbb373cd8dd6ceb79873d/a12dc9e38c79f67550a804f6e.js");</script>*@
 </head>
 <body class="homepage">
@@ -116,7 +119,7 @@ fbq('track', 'PageView');
                 <li style="padding: 0 65px;"><a href="/trang-chu/chia-se/">Chia sẻ</a></li>
                 <li class="break" style="padding-left:70px"><a href="#contact-us">Liên hệ</a></li>
                 <li><a href="@basketPage.Url">
-                        <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Giỏ hàng
+                        <span class="glyphicon glyphicon-shopping-cart shopping-cart" aria-hidden="true"></span> Giỏ hàng
                         (<span data-muilabel="basketcount">@CurrentCustomer.Basket().TotalQuantityCount</span>)
                     </a>
                 </li>

@@ -33,7 +33,7 @@ homepage.GetPropertyValue<IEnumerable<Merchello.Web.Models.VirtualContent.IProdu
                 <p>
                     Giá bán lẻ: @String.Format("{0:n0}", Model.Price) VND
                     @Html.Action("AddProductToBasketForm", "StoreBasket", new { area = "Merchello", model = Model })
-                    @*<a class="btn btn-danger btn-small" href="#open_facebook_box"><i class="icon-folder-open"></i> Mua ngay</a>*@
+                    
                 </p>
             </header>
             <a href="#" class="image featured"><img src="@featureImage" alt="" /></a>
