@@ -3510,3 +3510,13 @@ input[type="button"].btn-block {
 h3.blockHeader,h4.blockHeader {
     color: darkgreen;font-weight: bold;
 }
+a, object, embed {
+   outline: none;outline: 0;outline: 0;
+  border: none;
+  -moz-outline-style: none
+}
+a:active, a:focus {
+  outline: 0;
+  border: none;
+  -moz-outline-style: none
+}

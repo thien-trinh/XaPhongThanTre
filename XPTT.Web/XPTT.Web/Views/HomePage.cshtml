@@ -3,9 +3,23 @@
 @{
 	Layout = "MasterPage.cshtml";
 }
-<!-- Features 1 -->
-@Html.Partial("ListArticleAtHomePage")
 
+@{
+    IEnumerable<Merchello.Web.Models.VirtualContent.IProductContent> listProducts = CurrentPage != null ?
+        CurrentPage.GetPropertyValue<IEnumerable<Merchello.Web.Models.VirtualContent.IProductContent>>("FeatureProducts")
+        : Enumerable.Empty<Merchello.Web.Models.VirtualContent.IProductContent>();
+
+}
+<!-- Features 1 -->
+<div class="wrapper">
+    <section class="container">
+        <header class="major" id="list_products">
+            <h2>100% sản phẩm được chiết xuất từ thiên nhiên 100%</h2>
+            <p>Sự khác biệt cơ bản giữa mỹ phẩm thiên nhiên và mỹ phẩm thường nằm ở Chất lượng nguyên liệu. Mỹ phẩm thiên nhiên nuôi dưỡng và phục hồi tế bào da, tóc bằng tinh dầu, chiết xuất và các hoạt chất khác từ thiên nhiên …</p>
+        </header>
+        @Html.Partial("/Views/Partials/ListProductsAtHomePage.cshtml", listProducts)
+    </section>
+</div>
 <!-- Promo -->
 <div id="promo-wrapper">
     <section id="promo">
@@ -14,5 +28,5 @@
     </section>
 </div>
 <!-- Features 2 -->
-
+@Html.Partial("/Views/Partials/ListArticleAtHomePage.cshtml")
 <!-- Footer -->

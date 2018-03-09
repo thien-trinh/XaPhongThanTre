@@ -13,6 +13,10 @@
     // These can be accessed in the same way as any normal IPublishedContent property e.g. GetPropertyValue
 
     var featureImage = Model.HasValue("image") ? Umbraco.Media(Model.GetPropertyValue<string>("image")).umbracoFile : "";
+    var homepage = Umbraco.TypedContentAtRoot().First() as IPublishedContent;
+    IEnumerable<Merchello.Web.Models.VirtualContent.IProductContent> listProducts = homepage != null ?
+homepage.GetPropertyValue<IEnumerable<Merchello.Web.Models.VirtualContent.IProductContent>>("FeatureProducts")
+: Enumerable.Empty<Merchello.Web.Models.VirtualContent.IProductContent>();
 }
 
 
@@ -44,7 +48,15 @@
 
 
 </div>
-
+<div class="wrapper">
+    <section class="container">
+        <header class="major" id="list_products">
+            <h2>100% sản phẩm được chiết xuất từ thiên nhiên 100%</h2>
+            <p>Sự khác biệt cơ bản giữa mỹ phẩm thiên nhiên và mỹ phẩm thường nằm ở Chất lượng nguyên liệu. Mỹ phẩm thiên nhiên nuôi dưỡng và phục hồi tế bào da, tóc bằng tinh dầu, chiết xuất và các hoạt chất khác từ thiên nhiên …</p>
+        </header>
+        @Html.Partial("/Views/Partials/ListProductsAtHomePage.cshtml", listProducts)
+    </section>
+</div>
 <script type="text/javascript">
     fbq('track', 'ViewContent',
         {

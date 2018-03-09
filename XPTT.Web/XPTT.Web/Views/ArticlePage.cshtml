@@ -6,7 +6,15 @@
 @{
     var featureImage = CurrentPage.FeatureImage != null ? Umbraco.Media(CurrentPage.FeatureImage).umbracoFile : "";
 }
-@{   var selection = CurrentPage.AncestorOrSelf(1).Descendants("articlePage").Where("ShowOnHomePage == true").Where("Visible"); }
+@{ var selection = CurrentPage.AncestorOrSelf(1).Descendants("articlePage").Where("ShowOnHomePage == true").Where("Visible"); }
+
+@{
+    var homepage = Umbraco.TypedContentAtRoot().First() as IPublishedContent;
+    IEnumerable<Merchello.Web.Models.VirtualContent.IProductContent> listProducts = homepage != null ?
+homepage.GetPropertyValue<IEnumerable<Merchello.Web.Models.VirtualContent.IProductContent>>("FeatureProducts")
+: Enumerable.Empty<Merchello.Web.Models.VirtualContent.IProductContent>();
+
+}
 <!-- Main -->
 <div class="wrapper">
     <div class="container" id="main">
@@ -14,28 +22,28 @@
             <div class="4u 12u(narrower)">
 
                 <!-- Sidebar -->
-                <section id="sidebar">     
+                <section id="sidebar">
                     @foreach (var item in selection)
                     {
                         var featureImageArticle = item.FeatureImage != null ? Umbraco.Media(item.FeatureImage).umbracoFile : "";
                         <section>
                             <header>
-                                <h3><a href="@item.Url">@item.PageName</a></h3>
+                                <h3><a href="@item.Url">@item.PageName</a>
+                                </h3>
                             </header>
-                            <a href="@item.Url" class="image featured"><img src="@featureImageArticle" alt="" /></a>
-                            
+                            <a href="@item.Url" class="image featured"><img src="@featureImageArticle" alt=""/></a>
+
                             <p>
-                              @item.PageDescription
-                            </p>                        
+                                @item.PageDescription
+                            </p>
                         </section>
                     }
 
-                    
+
                 </section>
 
             </div>
             <div class="8u 12u(narrower) important(narrower)">
-
                 <!-- Content -->
                 <article id="content">
                     <header>
@@ -44,15 +52,23 @@
                             @CurrentPage.PageDescription
                         </p>
                     </header>
-                    <a href="#" class="image featured"><img src="@featureImage" alt="" /></a>
+                    <a href="#" class="image featured"><img src="@featureImage" alt=""/></a>
                     @CurrentPage.MainContent
                 </article>
 
             </div>
         </div>
-        
     </div>
-    
+</div>
+
+<div class="wrapper">
+    <section class="container">
+        <header class="major" id="list_products">
+            <h2>100% sản phẩm được chiết xuất từ thiên nhiên 100%</h2>
+            <p>Sự khác biệt cơ bản giữa mỹ phẩm thiên nhiên và mỹ phẩm thường nằm ở Chất lượng nguyên liệu. Mỹ phẩm thiên nhiên nuôi dưỡng và phục hồi tế bào da, tóc bằng tinh dầu, chiết xuất và các hoạt chất khác từ thiên nhiên …</p>
+        </header>
+        @Html.Partial("/Views/Partials/ListProductsAtHomePage.cshtml", listProducts)
+    </section>
 </div>
 <script type="text/javascript">
             fbq('track', 'ViewContent',

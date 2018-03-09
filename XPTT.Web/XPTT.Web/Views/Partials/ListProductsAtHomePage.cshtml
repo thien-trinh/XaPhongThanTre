@@ -3,12 +3,8 @@
 @using Merchello.Core
 @{
     
-    var selection = @Model.OrderBy(p=>p.Key);
+    var selection = @Model.OrderBy(p=>p.Sku);
 }
-
-   
-
-
 
 @if (selection.Any())
 {
