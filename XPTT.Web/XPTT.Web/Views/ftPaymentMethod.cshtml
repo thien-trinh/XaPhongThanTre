@@ -6,3 +6,6 @@
 @Html.Action("PaymentMethodForm", "CheckoutPaymentMethod", new { area = "FastTrack" })
 
 @Html.Action("DiscountForm", "CheckoutDiscount", new { area = "Merchello" })
+<script>
+  fbq('track', 'AddPaymentInfo');
+</script>

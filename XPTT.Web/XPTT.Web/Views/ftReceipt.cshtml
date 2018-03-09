@@ -2,9 +2,16 @@
 @{
 	Layout = "MasterPage.cshtml";
 }
-
+<script>
+  fbq('track', 'Purchase', {
+    value: 10,
+    currency: 'VNĐ',
+  });
+</script>
 <div class="wrapper">
     <div class="container" id="main">
-        @Html.Action("SalesReceipt", "CheckoutSummary", new { area = "FastTrack" })
+        @Html.Action("SalesReceipt", "CheckoutSummary", new {area = "FastTrack"})
     </div>
 </div>
+
+
