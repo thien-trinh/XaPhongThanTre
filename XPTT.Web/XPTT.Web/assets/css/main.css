@@ -1995,7 +1995,10 @@
 			position: relative;
 			z-index: 2;
 		}
-
+        .image-wrapper .image img{
+            width: 357px;
+            height: 215px;
+        }
 		.image-wrapper.first:before {
 			content: '';
 			display: block;

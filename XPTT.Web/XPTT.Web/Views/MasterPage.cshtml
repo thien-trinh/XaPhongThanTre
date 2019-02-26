@@ -75,21 +75,20 @@
 
     <!-- Facebook Pixel Code -->
     <script>
-  !function(f,b,e,v,n,t,s)
-  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-  n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t,s)}(window, document,'script',
-  'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '403627420086274');
-  fbq('track', 'PageView');
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+                n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+            n.queue=[];t=b.createElement(e);t.async=!0;
+            t.src=v;s=b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t,s)}(window, document,'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '164019681106102');
+        fbq('track', 'PageView');
     </script>
-    <noscript>
-        <img height="1" width="1" style="display:none"
-             src="https://www.facebook.com/tr?id=403627420086274&ev=PageView&noscript=1" />
-    </noscript>
+    <noscript><img height="1" width="1" style="display:none"
+                   src="https://www.facebook.com/tr?id=164019681106102&ev=PageView&noscript=1"
+              /></noscript>
     <!-- End Facebook Pixel Code -->
 
     @*<script id="mcjs" type="text/javascript">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/2f2bbbb373cd8dd6ceb79873d/a12dc9e38c79f67550a804f6e.js");</script>*@
@@ -190,7 +189,7 @@
                 </section>
                 <section class="6u 12u(narrower)">
                     <div class="row 0%">
-                        <ul class="divided icons 6u 12u(mobile)" style="width: 55%">
+                        <ul class="divided icons 6u 12u(mobile)" style="width: 70%">
                             <li class="icon fa-facebook"><a href="https://www.facebook.com/XaPhongThanTre/" target="_blank"><span class="extra">facebook.com/</span>XaPhongThanTre</a></li>
                             <li class="icon fa-instagram"><a href="#"><span class="extra">instagram.com/</span>XaPhongThanTre</a></li>
                             <li class="icon fa-envelope"><a href="mailto:xaphong.thiennhien@xaphongthantre.vn" target="_blank"><span class="extra">xaphong.thiennhien</span>@@xaphongthantre.vn</a></li>
@@ -237,55 +236,30 @@
 
 <script type="text/javascript" src="//downloads.mailchimp.com/js/signup-forms/popup/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script>
 @*<script type="text/javascript">require(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us17.list-manage.com","uuid":"2f2bbbb373cd8dd6ceb79873d","lid":"60505f88ee"}) })</script>*@
+<!-- Load Facebook SDK for JavaScript -->
 <div id="fb-root"></div>
 <script>
+    window.fbAsyncInit = function() {
+        FB.init({
+            xfbml            : true,
+            version          : 'v3.2'
+        });
+    };
+
     (function(d, s, id) {
         var js, fjs = d.getElementsByTagName(s)[0];
         if (d.getElementById(id)) return;
-        js = d.createElement(s);
-        js.id = id;
-        js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.10&appId=305112016570420";
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js';
         fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
-</script>
-<div id="cfacebook">
-    <a href="javascript:;" class="chat_fb" onclick="return:false"><i class="fa fa-facebook-square"></i> Hỗ trợ - Đặt Hàng</a>
-    <div class="fchat">
-        <script>
-            window.fbMessengerPlugins = window.fbMessengerPlugins || {
-                init: function() {
-                    FB.init({
-                        appId: '403627420086274',
-                        autoLogAppEvents: true,
-                        xfbml: true,
-                        version: 'v2.10'
-                    });
-                },
-                callable: []
-            };
-            window.fbAsyncInit = window.fbAsyncInit || function() {
-                window.fbMessengerPlugins.callable.forEach(function(item) { item(); });
-                window.fbMessengerPlugins.init();
-            };
-            setTimeout(function() {
-                (function(d, s, id) {
-                    var js, fjs = d.getElementsByTagName(s)[0];
-                    if (d.getElementById(id)) {
-                        return;
-                    }
-                    js = d.createElement(s);
-                    js.id = id;
-                    js.src = "//connect.facebook.net/en_US/sdk.js";
-                    fjs.parentNode.insertBefore(js, fjs);
-                }(document, 'script', 'facebook-jssdk'));
-            }, 0);
-        </script>
+    }(document, 'script', 'facebook-jssdk'));</script>
 
-        <div class="fb-customerchat"
-             page_id="379605262421356"
-             ref="">
-        </div>
-    </div>
+<!-- Your customer chat code -->
+<div class="fb-customerchat"
+     attribution=setup_tool
+     page_id="379605262421356"
+     logged_in_greeting="Xin chào, XaPhongThanTre.vn có thể giúp gì được bạn?"
+     logged_out_greeting="Xin chào, XaPhongThanTre.vn có thể giúp gì được bạn?">
 </div>
 <!-- Go to www.addthis.com/dashboard to customize your tools -->
 <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4ec085673765e5e7"></script>

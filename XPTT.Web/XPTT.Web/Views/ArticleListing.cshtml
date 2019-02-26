@@ -4,8 +4,8 @@
 	Layout = "MasterPage.cshtml";
 }
 @{   
-    var currentPageId =  UmbracoContext.Current.PageId; 
-   //var selection = CurrentPage.AncestorOrSelf(1).Descendants("articlePage").Where("Visible").OrderBy("CreateDate desc");
+    
+    //var selection = CurrentPage.AncestorOrSelf(1).Descendants("articlePage").Where("Visible").OrderBy("CreateDate desc");
     var selection = CurrentPage.Children.Where("Visible").OrderBy("CreateDate desc");
 
     var homepage = Umbraco.TypedContentAtRoot().First() as IPublishedContent;
