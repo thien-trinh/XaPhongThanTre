@@ -21,9 +21,9 @@
             <div class="row">
                 @foreach (var item in selection)
                 {
-                    var featureImage = item.FeatureImage != null ? Umbraco.Media(item.FeatureImage).umbracoFile : "";
+                    var featureImage = item.GetPropertyValue<string>("FeatureImage") != null ? Umbraco.Media(item.GetPropertyValue<string>("FeatureImage")).umbracoFile : "";
                     <section class="4u 12u(narrower) feature">
-                        <div class="image-wrapper first">
+                        <div class="image-wrapper first" style="width: 357px; height: 215px;">
                             <a href="@item.Url" class="image featured first"><img src="@featureImage" alt="" /></a>
                         </div>
                         <header>

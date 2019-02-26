@@ -4,7 +4,7 @@
     Layout = "MasterPage.cshtml";
 }
 @{
-    var featureImage = CurrentPage.FeatureImage != null ? Umbraco.Media(CurrentPage.FeatureImage).umbracoFile : "";
+    var featureImage = CurrentPage.GetPropertyValue<string>("FeatureImage") != null ? Umbraco.Media(CurrentPage.GetPropertyValue<string>("FeatureImage")).umbracoFile : "";
 }
 @{ var selection = CurrentPage.AncestorOrSelf(1).Descendants("articlePage").Where("ShowOnHomePage == true").Where("Visible"); }
 
@@ -25,7 +25,7 @@ homepage.GetPropertyValue<IEnumerable<Merchello.Web.Models.VirtualContent.IProdu
                 <section id="sidebar">
                     @foreach (var item in selection)
                     {
-                        var featureImageArticle = item.FeatureImage != null ? Umbraco.Media(item.FeatureImage).umbracoFile : "";
+                        var featureImageArticle = item.GetPropertyValue<string>("FeatureImage") != null ? Umbraco.Media(item.GetPropertyValue<string>("FeatureImage")).umbracoFile : "";
                         <section>
                             <header>
                                 <h3><a href="@item.Url">@item.PageName</a>
