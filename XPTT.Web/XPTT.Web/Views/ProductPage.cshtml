@@ -5,8 +5,26 @@
 }
 @{
     var featureImage = CurrentPage.FeartureImage!=null ? Umbraco.Media(CurrentPage.FeartureImage).umbracoFile :"";
+    string metaTitle = !String.IsNullOrEmpty(CurrentPage.MetaTitle) ? CurrentPage.MetaTitle : (!String.IsNullOrEmpty(CurrentPage.GetPropertyValue<string>("pageTitle")) ? CurrentPage.GetPropertyValue<string>("pageTitle") : CurrentPage.PageName);
+    string metaDescription = !String.IsNullOrEmpty(CurrentPage.GetPropertyValue<string>("metaDescription")) ? CurrentPage.GetPropertyValue<string>("metaDescription") : !String.IsNullOrEmpty(CurrentPage.PageDescription) ? CurrentPage.PageDescription : "";
 }
-
+<span itemscope itemtype="http://schema.org/Product">
+    
+    <meta itemprop="image" content="@featureImage"/>
+    <meta itemprop="name" content="@metaTitle">
+    <meta itemprop="description" content="@metaDescription">
+    <meta itemprop="brand" content="Hoa Lan">
+    <meta itemprop="color" content="Black">
+    <span itemprop="audience" itemscope itemtype="http://schema.org/PeopleAudience">
+        <meta itemprop="suggestedGender" content="unisex"/>
+    </span>
+    <span itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+        <meta itemprop="priceCurrency" content="VND"/>
+        <meta itemprop="price" content="@CurrentPage.Cost">
+        <link itemprop="itemCondition" href="http://schema.org/UsedCondition" content="new"/>
+        <link itemprop="availability" href="http://schema.org/InStock" content="in_stock"/>
+    </span>
+</span>
         <!-- Main -->
         <div class="wrapper">
             <div class="container" id="main">

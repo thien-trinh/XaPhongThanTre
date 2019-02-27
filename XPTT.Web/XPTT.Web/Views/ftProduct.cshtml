@@ -17,11 +17,30 @@
     IEnumerable<Merchello.Web.Models.VirtualContent.IProductContent> listProducts = homepage != null ?
 homepage.GetPropertyValue<IEnumerable<Merchello.Web.Models.VirtualContent.IProductContent>>("FeatureProducts")
 : Enumerable.Empty<Merchello.Web.Models.VirtualContent.IProductContent>();
+    string metaTitle = (!String.IsNullOrEmpty(Model.GetPropertyValue<string>("pageTitle")) ? Model.GetPropertyValue<string>("pageTitle") : Model.Name);
+    string metaDescription = !String.IsNullOrEmpty(Model.GetPropertyValue<string>("metaDescription")) ? Model.GetPropertyValue<string>("metaDescription") : "";
 }
 
 
 
+<span itemscope itemtype="http://schema.org/Product">
 
+    <meta itemprop="image" content="@("https://xaphongthantre.vn"+featureImage)" />
+    <meta itemprop="name" content="@metaTitle">
+    <meta itemprop="description" content="@metaDescription">
+    <meta itemprop="brand" content="Hoa Lan">
+    <meta itemprop="color" content="Black">
+    <meta itemprop="url" content="@Model.UrlAbsolute()"/>
+    <span itemprop="audience" itemscope itemtype="http://schema.org/PeopleAudience">
+        <meta itemprop="suggestedGender" content="unisex" />
+    </span>
+    <span itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+        <meta itemprop="priceCurrency" content="VND" />
+        <meta itemprop="price" content="@Model.Price">
+        <link itemprop="itemCondition" href="http://schema.org/UsedCondition" content="NewCondition" />
+        <link itemprop="availability" href="http://schema.org/InStock" content="InStock" />
+    </span>
+</span>
 
 <div class="wrapper">
     <div class="container" id="main">
@@ -40,10 +59,11 @@ homepage.GetPropertyValue<IEnumerable<Merchello.Web.Models.VirtualContent.IProdu
             <p>
                 @Html.Raw(Model.GetPropertyValue<string>("brief"))
             </p>
-           @Html.Raw(Model.GetPropertyValue<string>("description"))
+            @Html.Raw(Model.GetPropertyValue<string>("description"))
         </article>
-
-
+        <div class="product-detail-add-to-basket-bottom-full-width">
+        @Html.Action("AddProductToBasketForm", "StoreBasket", new { area = "Merchello", model = Model })
+        </div>
     </div>
 
 

@@ -42,9 +42,9 @@
                             var mediaId = product.GetPropertyValue<string>("image");
                             var image = Umbraco.TypedMedia(mediaId);
 
-                            <a href="@product.Url"><img src="@image.GetCropUrl(width: 50)" alt="@product.Name" width="20"/></a>
+                            <a href="@product.Url" style="vertical-align: -webkit-baseline-middle;"><img src="@image.GetCropUrl(width: 100)" alt="@product.Name" width="20"/></a>
                         }
-                        <a href="@product.Url">
+                        <a href="@product.Url" style="vertical-align: super">
                             <span>@product.Name</span>
                             @foreach (var choice in Model.Items[i].CustomerOptionChoices)
                             {
